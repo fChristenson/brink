@@ -1,1 +1,1 @@
-{"elements":[{"type":"element","name":"Page","elements":[{"type":"element","name":"CenterContainer","elements":[{"type":"element","name":"RangeInput"}]}]}]}
+{"elements":[{"type":"element","name":"Page","attributes":{"backgroundColor":"blue"},"elements":[{"type":"element","name":"CenterContainer","elements":[{"type":"element","name":"RangeInput"}]}]}]}

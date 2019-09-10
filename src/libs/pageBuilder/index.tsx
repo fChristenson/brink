@@ -1,15 +1,19 @@
-import { ReactNode } from "react";
-import path from "path";
+import React from "react";
+import * as components from "../../components";
 
-export const buildPage = (xml: any): ReactNode => {
-  const page = xml.elements.find((element: any) => element.name === "Page");
-  return require(path.resolve(__dirname, "..", "..", "components", page.name));
+export const buildPage = (children: any[]): React.ReactNode => {
+  for (const component of children) {
+    // @ts-ignore
+    const Component = components[component.name];
+    const attributes = component.attributes || {};
+
+    if (component.elements && component.elements.length > 0) {
+      const child = buildPage(component.elements);
+      return <Component {...attributes}>{child}</Component>;
+    } else {
+      return <Component {...attributes}></Component>;
+    }
+  }
+
+  return null;
 };
-
-/**
- * <Page>
-      <CenterContainer>
-        <RangeInput />
-      </CenterContainer>
-    </Page>
- */

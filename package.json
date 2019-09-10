@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npx parcel index.html",
     "compile": "npx xml-js test.xml > test.xml.json",
+    "compile:watch": "npx nodemon --watch test.xml --exec \"xml-js test.xml > test.xml.json\"",
     "test": "jest"
   },
   "keywords": [],
@@ -20,6 +21,7 @@
     "@types/react-dom": "^16.9.0",
     "enzyme": "^3.10.0",
     "jest": "^24.9.0",
+    "nodemon": "1.19.2",
     "parcel": "1.12.3",
     "react-dom": "16.9.0",
     "tslint": "5.19.0",
