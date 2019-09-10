@@ -2,18 +2,23 @@ import React from "react";
 import * as components from "../../components";
 
 export const buildPage = (children: any[]): React.ReactNode => {
-  for (const component of children) {
+  const nodes = [];
+  for (let i = 0; i < children.length; i++) {
+    const component = children[i];
     // @ts-ignore
     const Component = components[component.name];
     const attributes = component.attributes || {};
-
     if (component.elements && component.elements.length > 0) {
-      const child = buildPage(component.elements);
-      return <Component {...attributes}>{child}</Component>;
+      const childNodes = buildPage(component.elements);
+      nodes.push(
+        <Component key={i} {...attributes}>
+          {childNodes}
+        </Component>
+      );
     } else {
-      return <Component {...attributes}></Component>;
+      nodes.push(<Component key={i} {...attributes}></Component>);
     }
   }
 
-  return null;
+  return <>{nodes}</>;
 };

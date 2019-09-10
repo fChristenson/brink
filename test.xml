@@ -1,5 +1,54 @@
 <Page backgroundColor="blue">
-  <CenterContainer>
-    <RangeInput />
-  </CenterContainer>
+  <ListContainer>
+    <ListItem>
+      <CenterContainer>
+        <RangeInput />
+      </CenterContainer>
+    </ListItem>
+    <ListItem>
+      <CenterContainer>
+        <RangeInput />
+      </CenterContainer>
+    </ListItem>
+    <ListItem>
+      <CenterContainer>
+        <RangeInput />
+      </CenterContainer>
+    </ListItem>
+    <ListItem>
+      <CenterContainer>
+        <RangeInput />
+      </CenterContainer>
+    </ListItem>
+    <ListItem>
+      <CenterContainer>
+        <RangeInput />
+      </CenterContainer>
+    </ListItem>
+    <ListItem>
+      <CenterContainer>
+        <RangeInput />
+      </CenterContainer>
+    </ListItem>
+    <ListItem>
+      <CenterContainer>
+        <RangeInput />
+      </CenterContainer>
+    </ListItem>
+    <ListItem>
+      <CenterContainer>
+        <RangeInput />
+      </CenterContainer>
+    </ListItem>
+    <ListItem>
+      <CenterContainer>
+        <RangeInput />
+      </CenterContainer>
+    </ListItem>
+    <ListItem>
+      <CenterContainer>
+        <RangeInput />
+      </CenterContainer>
+    </ListItem>
+  </ListContainer>
 </Page>
