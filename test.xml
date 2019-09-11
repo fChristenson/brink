@@ -2,12 +2,12 @@
   <ListContainer>
     <ListItem>
       <CenterContainer>
-        <RangeInput />
+        <RangeInput name="foo"/>
       </CenterContainer>
     </ListItem>
     <ListItem>
       <CenterContainer>
-        <RangeInput />
+        <RangeInput name="bar"/>
       </CenterContainer>
     </ListItem>
     <ListItem>
