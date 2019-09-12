@@ -2,4 +2,8 @@ import ReactDom from "react-dom";
 import { buildPage } from "./src/libs/pageBuilder";
 import xml from "./test.xml.json";
 
-ReactDom.render(buildPage(xml.elements), document.getElementById("root"));
+const validators = {
+  foo: value => value && value.length > 3 && "Vale is ge 3"
+};
+
+ReactDom.render(buildPage(xml, validators), document.getElementById("root"));

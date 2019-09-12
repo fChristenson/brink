@@ -2,12 +2,12 @@
   <ListContainer>
     <ListItem>
       <CenterContainer>
-        <RangeInput name="foo"/>
+        <TextInput validator="foo" name="foo"/>
       </CenterContainer>
     </ListItem>
     <ListItem>
       <CenterContainer>
-        <RangeInput name="bar"/>
+        <TextInput name="bar" invalid="Such Invalid much wow"/>
       </CenterContainer>
     </ListItem>
     <ListItem>

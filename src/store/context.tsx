@@ -7,8 +7,12 @@ export interface IContext {
   onUpdate(key: string, value: any): void;
 }
 
-export class Provider extends React.Component<any, any> {
-  constructor(props: any) {
+interface IProps {
+  validators: any;
+}
+
+export class Provider extends React.Component<IProps, any> {
+  constructor(props: IProps) {
     super(props);
     this.state = {};
     this.onUpdate = this.onUpdate.bind(this);
@@ -16,7 +20,13 @@ export class Provider extends React.Component<any, any> {
 
   public render() {
     return (
-      <context.Provider value={{ state: this.state, onUpdate: this.onUpdate }}>
+      <context.Provider
+        value={{
+          state: this.state,
+          validators: this.props.validators,
+          onUpdate: this.onUpdate
+        }}
+      >
         {this.props.children}
       </context.Provider>
     );
@@ -37,6 +47,7 @@ export const withAppContext = (Component: React.ReactNode) => {
         return (
           // @ts-ignore
           <Component
+            validators={contextObj.validators}
             onUpdate={contextObj.onUpdate}
             state={contextObj.state}
             {...props}

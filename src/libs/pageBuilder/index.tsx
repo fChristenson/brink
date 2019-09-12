@@ -2,8 +2,8 @@ import React from "react";
 import * as components from "../../components";
 import { Provider } from "../../store/context";
 
-export const buildPage = (children: any[]) => (
-  <Provider>{parseXml(children)}</Provider>
+export const buildPage = (xml: any, validators: any) => (
+  <Provider validators={validators}>{parseXml(xml.elements)}</Provider>
 );
 
 const parseXml = (children: any[]): React.ReactNode => {
