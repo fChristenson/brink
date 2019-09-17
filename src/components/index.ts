@@ -1,6 +1,22 @@
-export * from "./CenterContainer";
-export * from "./ListContainer";
-export * from "./ListItem";
-export * from "./Page";
-export * from "./RangeInput";
-export * from "./TextInput";
+/**
+ * This module should not export anything besides
+ * the end component that will be used by the pageBuilder.
+ */
+
+// containers
+export { CenterContainer } from "./CenterContainer";
+export { Page } from "./Page";
+export { Paper } from "./Paper";
+export { DivContainer } from "./DivContainer";
+
+// inputs
+export { TextInput } from "./TextInput";
+export { SubmitInput } from "./SubmitInput";
+export { Button } from "./Button";
+
+// text
+export { Headline3 } from "./Headline3";
+export { Body2 } from "./Body2";
+
+// images
+export { Icon } from "./Icon";

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Body2 tests Base test should assert that the component matches the snapshot 1`] = `"<span style=\\"font-family:Roboto;font-style:normal;font-weight:normal;font-size:14px;line-height:20px;letter-spacing:0.25px;color:#707985\\"></span>"`;
+
+exports[`Body2 tests Base test should assert that the component matches the snapshot 2`] = `
+Object {
+  "color": "#707985",
+  "fontFamily": "Roboto",
+  "fontSize": "14px",
+  "fontStyle": "normal",
+  "fontWeight": "normal",
+  "letterSpacing": "0.25px",
+  "lineHeight": "20px",
+}
+`;

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubmitInput tests Base test should assert that the component matches the snapshot 1`] = `"<input type=\\"submit\\"/>"`;
+
+exports[`SubmitInput tests Base test should assert that the component matches the snapshot 2`] = `Object {}`;

@@ -1,9 +1,14 @@
 import React from "react";
 import * as components from "../../components";
-import { Provider } from "../../store/context";
+import { Provider, IProivderProps } from "../../store";
 
-export const buildPage = (xml: any, validators: any) => (
-  <Provider validators={validators}>{parseXml(xml.elements)}</Provider>
+interface IPageBuilderProps {
+  xml: any;
+  props: IProivderProps;
+}
+
+export const PageBuilder = ({ xml, props }: IPageBuilderProps) => (
+  <Provider {...props}>{parseXml(xml.elements)}</Provider>
 );
 
 const parseXml = (children: any[]): React.ReactNode => {
@@ -21,8 +26,10 @@ const parseXml = (children: any[]): React.ReactNode => {
           {childNodes}
         </Component>
       );
-    } else {
+    } else if (component.type === "element") {
       nodes.push(<Component key={i} {...attributes}></Component>);
+    } else {
+      nodes.push(component.text); // assume text node
     }
   }
 

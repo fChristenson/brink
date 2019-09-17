@@ -1,4 +1,10 @@
+import { Color } from "../../configs/colors/colors";
+
 export const styles = {
-  width: "100%",
-  minHeight: "100%"
+  padding: "10px 10px 18px",
+  backgroundColor: Color.WHITE
+};
+
+export const formStyles = {
+  margin: "0"
 };

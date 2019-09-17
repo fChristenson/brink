@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Center container Base test should assert that the component matches the snapshot 1`] = `"<div style=\\"display:flex;justify-content:center;align-items:center\\"></div>"`;
+
+exports[`Center container Base test should assert that the component matches the snapshot 2`] = `
+Object {
+  "alignItems": "center",
+  "display": "flex",
+  "justifyContent": "center",
+}
+`;

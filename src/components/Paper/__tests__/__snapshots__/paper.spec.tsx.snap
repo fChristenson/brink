@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paper tests Base test should assert that the component matches the snapshot 1`] = `"<div style=\\"box-shadow:0px 3px 20px rgba(38, 74, 106, 0.4);border-radius:8px\\"></div>"`;
+
+exports[`Paper tests Base test should assert that the component matches the snapshot 2`] = `
+Object {
+  "borderRadius": "8px",
+  "boxShadow": "0px 3px 20px rgba(38, 74, 106, 0.4)",
+}
+`;
