@@ -1,0 +1,14 @@
+<Page>
+  <Paper margin="0 auto" maxWidth="355px" height="430px" background="url(/rocket.svg) center no-repeat">
+    <DivContainer justifyContent="flex-end">
+      <Icon variant="help" />
+    </DivContainer>
+  </Paper>
+  <DivContainer margin="39px 0 0">
+    <Headline3 textAlign="center">Intro screen</Headline3>
+    <Body2 margin="14px 0 30px" textAlign="center" >Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</Body2>
+  </DivContainer>
+  <CenterContainer>
+    <Button onClick="goToFirstQuestion">Let's go!</Button>
+  </CenterContainer>
+</Page>

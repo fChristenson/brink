@@ -10,6 +10,7 @@ export { Paper } from "./Paper";
 export { DivContainer } from "./DivContainer";
 
 // inputs
+export { RadioInput } from "./RadioInput";
 export { TextInput } from "./TextInput";
 export { SubmitInput } from "./SubmitInput";
 export { Button } from "./Button";

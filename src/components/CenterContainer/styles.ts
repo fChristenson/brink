@@ -1,5 +1,9 @@
-export const styles = {
+import { CSSProperties } from "react";
+
+export const styles: CSSProperties = {
+  flexDirection: "column",
   display: "flex",
   justifyContent: "center",
-  alignItems: "center"
+  alignItems: "center",
+  margin: "0 auto"
 };

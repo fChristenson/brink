@@ -1,15 +1,26 @@
 import React from "react";
 import { styles } from "./styles";
 import { IconName } from "./IconNames";
-import { toUpper } from "../../libs/utils/toUpper";
+import * as Icons from "./icons";
+import { ColorNames } from "../../configs/colors/colors";
+
+const lowerCaseIcons = Object.keys(Icons).reduce((acc, key) => {
+  // @ts-ignore
+  acc[key.toLowerCase()] = Icons[key];
+  return acc;
+}, {});
 
 interface IProps {
-  variant?: IconName;
+  variant: IconName;
+  color?: ColorNames;
 }
 
-export const Icon: React.FunctionComponent<IProps> = ({ variant }) => {
-  const name = toUpper(variant);
+export const Icon: React.FunctionComponent<IProps> = ({ variant, color }) => {
   // @ts-ignore
-  const img = name ? IconName[name] : undefined;
-  return <img style={styles} src={`/${img}`} />;
+  const Component = lowerCaseIcons[variant.toLowerCase()];
+  return (
+    <span style={styles}>
+      <Component color={color} style={styles} />
+    </span>
+  );
 };

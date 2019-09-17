@@ -1,23 +1,16 @@
 import ReactDom from "react-dom";
 import React from "react";
-import { PageBuilder } from "./src/libs/pageBuilder";
-import xml from "./test.xml.json";
+import { Route, BrowserRouter } from "react-router-dom";
+import { Page1 } from "./testFlow/page1";
+import { Page2 } from "./testFlow/page2";
 
-const props = {
-  onUpdateCallback: state => console.log("onUpdate", state),
-  onSubmit: state => console.log("onSubmit", state),
-  validators: {
-    foo: value => value && value.length > 3 && "Value is ge 3"
-  },
-  onClicks: {
-    goToFirstQuestion: e => {
-      e.preventDefault();
-      return alert(1);
-    }
-  }
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Route exact path="/" render={() => <Page1 />} />
+      <Route path="/2" render={() => <Page2 />} />
+    </BrowserRouter>
+  );
 };
 
-ReactDom.render(
-  <PageBuilder xml={xml} props={props} />,
-  document.getElementById("root")
-);
+ReactDom.render(<App />, document.getElementById("root"));

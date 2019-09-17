@@ -1,3 +1,5 @@
 export enum IconName {
-  HELP = "help.svg"
+  HELP = "Help",
+  SUBSCRIPTION = "subscription",
+  MOBILE = "Mobile"
 }

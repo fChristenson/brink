@@ -1,8 +1,4 @@
 export const styles = {
-  padding: "10px 10px 18px",
+  padding: "10px",
   cursor: "pointer"
-};
-
-export const formStyles = {
-  margin: "0"
 };

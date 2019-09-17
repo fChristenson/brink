@@ -2,7 +2,7 @@ import { CSSProperties } from "react";
 import { Color } from "../../configs/colors/colors";
 
 export const styles: CSSProperties = {
-  color: Color.HEADLINE3,
+  color: Color.GRAY1,
   fontFamily: "Roboto",
   fontStyle: "normal",
   fontWeight: "bolder",

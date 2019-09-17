@@ -1,7 +1,7 @@
 export const toUpper = (val: any): string | undefined => {
   try {
     return val.toUpperCase();
-  } catch (_) {
+  } catch (e) {
     return undefined;
   }
 };

@@ -8,5 +8,5 @@ export const styles: CSSProperties = {
   fontSize: "14px",
   lineHeight: "20px",
   letterSpacing: "0.25px",
-  color: Color.BODY2
+  color: Color.GRAY1
 };
