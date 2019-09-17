@@ -18,7 +18,7 @@ export const TextInputComponent: React.FunctionComponent<IProps> = ({
   name,
   invalid,
   validator,
-  validators
+  validators = {}
 }) => {
   const [error, setError] = React.useState();
   const validate: IValidate = (validator && validators[validator]) || noop;

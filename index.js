@@ -8,6 +8,12 @@ const props = {
   onSubmit: state => console.log("onSubmit", state),
   validators: {
     foo: value => value && value.length > 3 && "Value is ge 3"
+  },
+  onClicks: {
+    goToFirstQuestion: e => {
+      e.preventDefault();
+      return alert(1);
+    }
   }
 };
 

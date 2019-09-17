@@ -3,6 +3,7 @@ import { context } from "./context";
 
 export interface IProivderProps {
   validators?: any;
+  onClicks?: any;
   onUpdateCallback?(state: any): void;
   onSubmit?(state: any): void;
 }
@@ -21,6 +22,7 @@ export class Provider extends React.Component<IProivderProps> {
         value={{
           state: this.state,
           validators: this.props.validators || {},
+          onClicks: this.props.onClicks || {},
           onUpdate: this.onUpdate,
           onSubmit: this.onSubmit
         }}

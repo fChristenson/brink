@@ -21,6 +21,7 @@ export const withAppContext = (Component: React.ReactNode) => {
           // @ts-ignore
           <Component
             validators={contextObj.validators}
+            onClicks={contextObj.onClicks}
             onUpdate={contextObj.onUpdate}
             onSubmit={contextObj.onSubmit}
             state={contextObj.state}
