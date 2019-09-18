@@ -2,16 +2,15 @@ import React from "react";
 import { styles, selectedStyles, inputStyles } from "./styles";
 import { applyStyles } from "../../libs/utils/applyStyles";
 import { Icon } from "../Icon";
-import { IconName } from "../Icon/IconNames";
 import { Body2 } from "../Body2";
 import { withAppContext, IContext } from "../../store";
 import { ColorNames } from "../../configs/colors/colors";
+import { IMargin } from "../../libs/interfaces/margin";
+import { IIconVariant } from "../../libs/interfaces/iconVariant";
+import { IName } from "../../libs/interfaces/name";
 
-interface IProps extends IContext {
+interface IProps extends IContext, IMargin, IIconVariant, IName {
   value: string;
-  name: string;
-  variant: IconName;
-  margin?: string;
 }
 
 export const RadioInputComponent: React.FunctionComponent<IProps> = ({

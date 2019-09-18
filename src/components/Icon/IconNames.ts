@@ -1,5 +1,7 @@
 export enum IconName {
   HELP = "Help",
-  SUBSCRIPTION = "subscription",
-  MOBILE = "Mobile"
+  SUBSCRIPTION = "Subscription",
+  MOBILE = "Mobile",
+  CHEVRON_RIGHT = "ChevronRight",
+  CHEVRON_LEFT = "ChevronLeft"
 }

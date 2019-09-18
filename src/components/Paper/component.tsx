@@ -3,11 +3,11 @@ import { styles } from "./styles";
 import { applyStyles } from "../../libs/utils/applyStyles";
 import { Color } from "../../configs/colors/colors";
 import { toUpper } from "../../libs/utils/toUpper";
+import { IMargin } from "../../libs/interfaces/margin";
+import { IMaxWidth } from "../../libs/interfaces/maxWidth";
 
-interface IProps {
-  maxWidth?: string;
+interface IProps extends IMargin, IMaxWidth {
   height?: string;
-  margin?: string;
   background?: string;
   backgroundColor?: string;
 }

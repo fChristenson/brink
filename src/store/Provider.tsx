@@ -1,8 +1,8 @@
 import React from "react";
 import { context } from "./context";
+import { IValidators } from "../libs/interfaces/validators";
 
-export interface IProivderProps {
-  validators?: any;
+export interface IProivderProps extends IValidators {
   onClicks?: any;
   onUpdateCallback?(state: any): void;
   onSubmit?(state: any): void;

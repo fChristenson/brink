@@ -1,12 +1,9 @@
 import React from "react";
 import { styles } from "./styles";
 import { applyStyles } from "../../libs/utils/applyStyles";
+import { IMaxWidth } from "../../libs/interfaces/maxWidth";
 
-interface IProps {
-  maxWidth?: string;
-}
-
-export const CenterContainer: React.FunctionComponent<IProps> = ({
+export const CenterContainer: React.FunctionComponent<IMaxWidth> = ({
   children,
   maxWidth
 }) => {

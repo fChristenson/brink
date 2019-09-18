@@ -5,6 +5,8 @@ export const styles: CSSProperties = {
   cursor: "pointer",
   width: "230px",
   height: "50px",
+  display: "flex",
+  alignItems: "center",
   background: Color.BLUE1,
   borderRadius: "47px",
   color: Color.WHITE1,
@@ -15,4 +17,8 @@ export const styles: CSSProperties = {
   lineHeight: "16px",
   textAlign: "center",
   letterSpacing: "0.75px"
+};
+
+export const textStyles: CSSProperties = {
+  flex: "1 0 auto"
 };

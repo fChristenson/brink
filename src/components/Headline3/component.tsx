@@ -1,14 +1,13 @@
 import React from "react";
 import { styles } from "./styles";
-import { TextAlign } from "../../libs/utils/textAlign";
+import { ITextAlign } from "../../libs/interfaces/textAlign";
 import { applyStyles } from "../../libs/utils/applyStyles";
 import { Color } from "../../configs/colors/colors";
 import { toUpper } from "../../libs/utils/toUpper";
+import { IMargin } from "../../libs/interfaces/margin";
 
-interface IProps {
-  textAlign?: TextAlign;
+interface IProps extends IMargin, ITextAlign {
   textColor?: Color;
-  margin?: string;
 }
 
 export const Headline3: React.FunctionComponent<IProps> = ({

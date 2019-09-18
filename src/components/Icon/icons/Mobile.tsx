@@ -1,11 +1,8 @@
 import React from "react";
-import { ColorNames, Color } from "../../../configs/colors/colors";
+import { Color } from "../../../configs/colors/colors";
+import { IIconProps } from "./IconProps";
 
-interface IProps {
-  color: ColorNames;
-}
-
-export const Mobile: React.FunctionComponent<IProps> = ({ color }) => {
+export const Mobile: React.FunctionComponent<IIconProps> = ({ color }) => {
   return (
     <svg
       width="48"

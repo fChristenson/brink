@@ -1,14 +1,13 @@
 import React from "react";
 import { styles } from "./styles";
 import { applyStyles } from "../../libs/utils/applyStyles";
-import { TextAlign } from "../../libs/utils/textAlign";
+import { ITextAlign } from "../../libs/interfaces/textAlign";
 import { toUpper } from "../../libs/utils/toUpper";
 import { Color } from "../../configs/colors/colors";
+import { IPadding } from "../../libs/interfaces/padding";
+import { IMargin } from "../../libs/interfaces/margin";
 
-interface IProps {
-  textAlign?: TextAlign;
-  margin?: string;
-  padding?: string;
+interface IProps extends IPadding, IMargin, ITextAlign {
   textColor?: string;
   noWrap?: boolean;
 }

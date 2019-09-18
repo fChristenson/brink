@@ -9,9 +9,13 @@ const props = {
     foo: value => value && value.length > 3 && "Value is ge 3"
   },
   onClicks: {
+    next: e => {
+      e.preventDefault();
+      alert("next");
+    },
     goBack: e => {
       e.preventDefault();
-      return alert(1);
+      window.location.href = "/";
     }
   }
 };
