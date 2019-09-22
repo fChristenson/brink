@@ -1,8 +1,6 @@
 import React from "react";
 import { PageBuilder } from "../../src/libs/pageBuilder";
 import xml from "./test.xml.json";
-import { BrinkPage } from "../../foo";
-import { Provider } from "../../src/store";
 
 const props = {
   onUpdateCallback: state => console.log("onUpdate", state),
@@ -22,4 +20,4 @@ const props = {
   }
 };
 
-export const Page2 = () => <BrinkPage {...props} />;
+export const Page2 = () => <PageBuilder props={props} xml={xml} />;

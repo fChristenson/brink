@@ -1,8 +1,8 @@
 import ReactDom from "react-dom";
 import React from "react";
 import { Route, BrowserRouter } from "react-router-dom";
-import { Page1 } from "./testFlow/page1";
-import { Page2 } from "./testFlow/page2";
+import { Page1 } from "./testFlows/page1";
+import { Page2 } from "./testFlows/page2";
 
 const App = () => {
   return (
