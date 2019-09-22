@@ -34,4 +34,6 @@ export const ButtonComponent: React.FunctionComponent<IProps> = ({
   );
 };
 
+ButtonComponent.displayName = "Button";
+
 export const Button = withAppContext(ButtonComponent);

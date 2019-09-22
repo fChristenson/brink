@@ -1,6 +1,5 @@
 import React from "react";
 import { styles } from "./styles";
-import { IconName } from "./IconNames";
 import * as Icons from "./icons";
 import { ColorNames } from "../../configs/colors/colors";
 import { applyStyles } from "../../libs/utils/applyStyles";

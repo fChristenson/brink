@@ -10,3 +10,5 @@ export const CenterContainer: React.FunctionComponent<IMaxWidth> = ({
   const style = applyStyles(styles, { maxWidth });
   return <div style={style}>{children}</div>;
 };
+
+CenterContainer.displayName = "CenterContainer";

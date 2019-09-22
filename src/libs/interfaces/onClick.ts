@@ -1,4 +1,4 @@
 export interface IOnClick {
   onClicks?: any;
-  onClick: string;
+  onClick?: string;
 }

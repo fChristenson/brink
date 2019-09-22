@@ -9,7 +9,9 @@
     "compile": "npx xml-js test.xml > test.xml.json",
     "compile:watch": "npx nodemon --watch test.xml --exec \"xml-js test.xml > test.xml.json\"",
     "test": "npx jest",
-    "test:watch": "npx jest --watch"
+    "test:watch": "npx jest --watch",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "keywords": [],
   "author": "Fredrik Christenson",
@@ -18,21 +20,28 @@
     "react": "16.9.0"
   },
   "devDependencies": {
-    "@types/enzyme": "^3.10.3",
+    "@babel/core": "7.6.0",
+    "@storybook/cli": "5.2.1",
+    "@storybook/react": "5.2.1",
+    "@types/enzyme": "3.10.3",
     "@types/enzyme-adapter-react-16": "1.0.5",
     "@types/jest": "24.0.18",
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0",
-    "enzyme": "^3.10.0",
+    "@types/react": "16.9.2",
+    "@types/react-dom": "16.9.0",
+    "@types/storybook__react": "4.0.2",
+    "awesome-typescript-loader": "5.2.1",
+    "babel-loader": "8.0.6",
+    "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
-    "jest": "^24.9.0",
+    "jest": "24.9.0",
     "nodemon": "1.19.2",
     "parcel": "1.12.3",
+    "react-docgen-typescript-loader": "3.2.1",
     "react-dom": "16.9.0",
     "react-router-dom": "5.0.1",
     "ts-jest": "24.1.0",
     "tslint": "5.19.0",
-    "typescript": "^3.6.2",
+    "typescript": "3.6.2",
     "xml-js": "1.6.11"
   }
 }
