@@ -1,14 +1,27 @@
 <Page>
-  <Paper margin="0 auto" maxWidth="355px" height="430px" background="url(/rocket.svg) center no-repeat">
-    <DivContainer justifyContent="flex-end">
-      <Icon variant="help" />
+  <DivContainer maxWidth="355px" margin="0 auto">
+    <Paper margin="0 auto 58px" backgroundColor="gradient1">
+      <DivContainer justifyContent="flex-end">
+        <Icon variant="Help"/>
+      </DivContainer>
+      <Headline3 textAlign="center" textColor="white1">
+        What is included in your cost today?
+      </Headline3>
+      <Body2 padding="10px 0 20px" textAlign="center" textColor="white2">
+        Your latest payment to Telia was 390 kr
+      </Body2>
+    </Paper>
+    <CenterContainer maxWidth="355px">
+      <RadioInput variant="Subscription" name="radio" value="test1">
+        Only the subscription
+      </RadioInput>
+      <RadioInput margin="10px 0 0" variant="mobile" name="radio" value="test2">
+        Subscription with a phone
+      </RadioInput>
+    </CenterContainer>
+    <DivContainer margin="59px 0 0 0" alignItems="center" justifyContent="space-between">
+      <Icon onClick="goBack" padding="10px 10px 10px 0" variant="ChevronLeft"/>
+      <Button onClick="next" rightIcon="ChevronRight">Next question</Button>
     </DivContainer>
-  </Paper>
-  <DivContainer margin="39px 0 0">
-    <Headline3 textAlign="center">Intro screen</Headline3>
-    <Body2 margin="14px 0 30px" textAlign="center" >Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</Body2>
   </DivContainer>
-  <CenterContainer>
-    <Button onClick="goToFirstQuestion">Let's go!</Button>
-  </CenterContainer>
 </Page>
