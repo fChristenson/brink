@@ -1,8 +1,9 @@
 {
-  "name": "brink",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/index.ts",
+  "name": "brink-core",
+  "version": "1.0.9",
+  "description": "User survey framework",
+  "main": "out/index.js",
+  "types": "out/index.d.ts",
   "scripts": {
     "start": "npx parcel index.html",
     "prestart": "mkdir -p dist && cp ./src/images/* dist/",
@@ -11,13 +12,13 @@
     "test": "npx jest",
     "test:watch": "npx jest --watch",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepublish": "npx tsc"
   },
   "keywords": [],
   "author": "Fredrik Christenson",
   "license": "ISC",
   "dependencies": {
-    "commander": "3.0.1",
     "react": "16.9.0"
   },
   "devDependencies": {
@@ -27,7 +28,6 @@
     "@storybook/addons": "^5.2.1",
     "@storybook/cli": "5.2.1",
     "@storybook/react": "^5.2.1",
-    "@types/commander": "2.12.2",
     "@types/enzyme": "3.10.3",
     "@types/enzyme-adapter-react-16": "1.0.5",
     "@types/jest": "24.0.18",

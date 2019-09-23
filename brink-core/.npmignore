@@ -1,0 +1,16 @@
+node_modules/
+coverage/
+.storybook/
+__tests__/
+__test__/
+spec*
+stories*
+src/libs/test/
+testFlows/
+index.html
+./index.js
+tslint.json
+tsconfig.json
+jest.config.js
+.cache/
+dist/

@@ -1,4 +1,4 @@
-import { ColorNames } from "../../configs/colors";
+import { ColorNames } from "brink-core";
 
 export const getComponentBody = (xml: any[]): string => {
   const result: string[] = [];

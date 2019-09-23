@@ -1,10 +1,14 @@
-#!/usr/bin/node
+#!/usr/local/bin/node
 import fs from "fs";
 import path from "path";
 import { cli } from "./cli";
 import { run } from "./run";
 
 (() => {
+  if (cli.args.length !== 1) {
+    return cli.help();
+  }
+
   const rootFilePath = path.resolve(cli.args[0]);
   const stats = fs.statSync(rootFilePath);
 
