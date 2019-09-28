@@ -4,15 +4,21 @@ import { CodeEditor } from "./components/CodeEditor";
 import { MenuBar } from "./components/MenuBar";
 import { Canvas } from "./components/Canvas";
 import { ComponentEditor } from "./components/ComponentEditor";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 const App = () => {
   return (
-    <div className="bp3-dark">
-      <MenuBar />
-      <Canvas />
-      <CodeEditor />
-      <ComponentEditor />
-    </div>
+    <Provider store={store}>
+      <div className="bp3-dark">
+        <MenuBar />
+        <div className="content">
+          <CodeEditor />
+          <Canvas />
+          <ComponentEditor />
+        </div>
+      </div>
+    </Provider>
   );
 };
 

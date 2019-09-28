@@ -1,11 +1,12 @@
-import React from "react";
-import { RootNode } from "./components/RootNode";
-import { styles } from "./styles";
+import { compose } from "redux";
+import { connect } from "react-redux";
+import { Canvas as Component } from "./component";
+import { IState } from "../../store/state";
 
-export const Canvas = () => {
-  return (
-    <div style={styles}>
-      <RootNode />
-    </div>
-  );
+const mapStateToProps = (state: IState) => {
+  return {
+    zoom: state.canvas.zoom
+  };
 };
+
+export const Canvas = compose(connect(mapStateToProps))(Component);

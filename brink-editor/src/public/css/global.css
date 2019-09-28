@@ -5,3 +5,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --menu-height: 50px;
+  --margin-md: 12px;
+}

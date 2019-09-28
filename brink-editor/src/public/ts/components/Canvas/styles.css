@@ -1,0 +1,11 @@
+.canvas {
+  width: 100vw;
+  height: calc(100vh - var(--menu-height));
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.canvas__storyboard {
+  padding: var(--margin-md);
+  transform-origin: 0 0;
+}

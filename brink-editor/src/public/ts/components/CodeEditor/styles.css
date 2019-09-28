@@ -1,0 +1,7 @@
+.code_editor {
+  flex: 0 0 300px;
+}
+
+.code_editor--hidden {
+  display: none;
+}
