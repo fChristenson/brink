@@ -1,16 +1,28 @@
 import React from "react";
 import Highlight from "react-highlight.js";
+import { Drawer } from "@blueprintjs/core";
+import { config } from "./config";
 
 interface IProps {
   open: boolean;
+  onClose(): void;
 }
 
-export const CodeEditor: React.FunctionComponent<IProps> = ({ open }) => {
-  const className = open
-    ? "code_editor bp3-dark"
-    : "code_editor--hidden bp3-dark";
+export const CodeEditor: React.FunctionComponent<IProps> = ({
+  open,
+  onClose
+}) => {
   return (
-    <div className={className}>
+    <Drawer
+      position="left"
+      icon={config.icon}
+      size={Drawer.SIZE_SMALL}
+      isOpen={open}
+      hasBackdrop={false}
+      title={config.title}
+      onClose={onClose}
+      className="bp3-dark"
+    >
       <Highlight language="xml">
         {[
           "<Page>",
@@ -19,6 +31,6 @@ export const CodeEditor: React.FunctionComponent<IProps> = ({ open }) => {
           "</Page>"
         ].join("\n")}
       </Highlight>
-    </div>
+    </Drawer>
   );
 };

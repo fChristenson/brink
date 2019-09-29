@@ -1,4 +1,9 @@
-export const config = {
+interface IConfig {
+  title: string;
+  icon: "settings";
+}
+
+export const config: IConfig = {
   title: "Component editor",
-  localStorageKey: "component_editor_open"
+  icon: "settings"
 };

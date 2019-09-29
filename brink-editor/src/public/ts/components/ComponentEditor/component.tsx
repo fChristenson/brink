@@ -1,12 +1,26 @@
 import React from "react";
+import { Drawer } from "@blueprintjs/core";
+import { config } from "./config";
 
 interface IProps {
   open: boolean;
+  onClose(): void;
 }
 
-export const ComponentEditor: React.FunctionComponent<IProps> = ({ open }) => {
-  const className = open
-    ? "component_editor bp3-dark"
-    : "component_editor--hidden bp3-dark";
-  return <div className={className}>foobar</div>;
+export const ComponentEditor: React.FunctionComponent<IProps> = ({
+  open,
+  onClose
+}) => {
+  return (
+    <Drawer
+      position="right"
+      icon={config.icon}
+      size={Drawer.SIZE_SMALL}
+      isOpen={open}
+      hasBackdrop={false}
+      title={config.title}
+      onClose={onClose}
+      className="bp3-dark"
+    ></Drawer>
+  );
 };

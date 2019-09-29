@@ -6,6 +6,7 @@ import { Dispatch } from "react";
 import { IAction } from "../../../../../../store/action";
 import { IRootNode } from "../../RootNode";
 import { RemoveRootNode } from "../../../../actions";
+import { withRouter, RouteComponentProps } from "react-router";
 
 interface IProps {
   rootNode: IRootNode;
@@ -18,9 +19,12 @@ const mapStateToProps = (_: IState, { rootNode }: IProps) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: Dispatch<IAction>) => {
+const mapDispatchToProps = (
+  dispatch: Dispatch<IAction>,
+  { history }: IProps & RouteComponentProps
+) => {
   return {
-    onEdit: (rootNode: IRootNode) => alert(rootNode),
+    onEdit: (rootNode: IRootNode) => history.push(`/page`),
     onConnect: (rootNode: IRootNode) => alert(rootNode),
     onExport: (rootNode: IRootNode) => alert(rootNode),
     onDelete: (rootNode: IRootNode) => dispatch(RemoveRootNode(rootNode))
@@ -28,6 +32,7 @@ const mapDispatchToProps = (dispatch: Dispatch<IAction>) => {
 };
 
 export const EditMenu = compose(
+  withRouter,
   connect(
     mapStateToProps,
     mapDispatchToProps

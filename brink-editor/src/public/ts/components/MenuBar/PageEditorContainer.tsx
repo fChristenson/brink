@@ -6,8 +6,6 @@ import { OpenCodeEditor } from "../CodeEditor/actions";
 import { IAction } from "../../store/action";
 import { OpenComponentEditor } from "../ComponentEditor/actions";
 import { IState } from "../../store/state";
-import { config as codeConfig } from "../CodeEditor/config";
-import { config as componentConfig } from "../ComponentEditor/config";
 
 const mapStateToProps = (state: IState) => {
   return {
@@ -20,20 +18,15 @@ const mapStateToProps = (state: IState) => {
 const mapDispatchToProps = (dispatch: Dispatch<IAction>) => {
   return {
     openCodeEditor: (open: boolean) => {
-      window.localStorage.setItem(codeConfig.localStorageKey, open.toString());
       dispatch(OpenCodeEditor(open));
     },
     openComponentEditor: (open: boolean) => {
-      window.localStorage.setItem(
-        componentConfig.localStorageKey,
-        open.toString()
-      );
       dispatch(OpenComponentEditor(open));
     }
   };
 };
 
-export const MenuBar = compose(
+export const PageEditorMenuBar = compose(
   connect(
     mapStateToProps,
     mapDispatchToProps

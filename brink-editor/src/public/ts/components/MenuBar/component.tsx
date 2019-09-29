@@ -46,7 +46,7 @@ export const MenuBar: React.FunctionComponent<IProps> = ({
         {openCodeEditor && (
           <Button
             className="bp3-minimal"
-            icon="code"
+            icon={codeConfig.icon}
             text={codeConfig.title}
             onClick={() => openCodeEditor(!codeEditorOpen)}
           />
@@ -54,7 +54,7 @@ export const MenuBar: React.FunctionComponent<IProps> = ({
         {openComponentEditor && (
           <Button
             className="bp3-minimal"
-            icon="settings"
+            icon={componentConfig.icon}
             text={componentConfig.title}
             onClick={() => openComponentEditor(!componentEditorOpen)}
           />
