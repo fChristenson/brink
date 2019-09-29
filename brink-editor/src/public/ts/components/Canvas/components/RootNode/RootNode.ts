@@ -1,13 +1,9 @@
 export interface IRootNode {
   id: number;
-  x: number;
-  y: number;
 }
 
-export const RootNode = (x: number, y: number) => {
+export const RootNode = () => {
   return {
-    id: Math.random(),
-    x,
-    y
+    id: Math.random()
   };
 };

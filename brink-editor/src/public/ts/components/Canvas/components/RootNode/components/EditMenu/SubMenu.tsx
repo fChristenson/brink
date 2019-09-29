@@ -26,7 +26,7 @@ export const SubMenu: React.FunctionComponent<IProps> = ({
         onClick={() => onConnect(rootNode)}
       />
       <MenuItem
-        text="Export"
+        text="Export page"
         icon="export"
         onClick={() => onExport(rootNode)}
       />

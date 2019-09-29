@@ -11,6 +11,7 @@ import { config as componentConfig } from "../ComponentEditor/config";
 
 const mapStateToProps = (state: IState) => {
   return {
+    title: "Brink page editor",
     codeEditorOpen: state.codeEditor.open,
     componentEditorOpen: state.componentEditor.open
   };

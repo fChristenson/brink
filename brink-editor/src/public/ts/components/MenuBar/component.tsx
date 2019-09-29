@@ -1,28 +1,48 @@
 import React from "react";
 import { Navbar, Button, Alignment } from "@blueprintjs/core";
-import { NewPageButton } from "./components/NewPageButton";
 import { config as codeConfig } from "../CodeEditor/config";
 import { config as componentConfig } from "../ComponentEditor/config";
 
 interface IProps {
+  title: string;
   codeEditorOpen?: boolean;
   componentEditorOpen?: boolean;
   openCodeEditor?(open: boolean): void;
   openComponentEditor?(open: boolean): void;
+  addPage?(): void;
+  exportFlow?(): void;
 }
 
 export const MenuBar: React.FunctionComponent<IProps> = ({
+  title,
   openCodeEditor,
   openComponentEditor,
   codeEditorOpen,
-  componentEditorOpen
+  componentEditorOpen,
+  addPage,
+  exportFlow
 }) => {
   return (
     <Navbar fixedToTop>
       <Navbar.Group align={Alignment.LEFT}>
-        <Navbar.Heading>Brink editor</Navbar.Heading>
+        <Navbar.Heading>{title}</Navbar.Heading>
         <Navbar.Divider />
-        <NewPageButton />
+        {addPage && (
+          <Button
+            className="bp3-minimal"
+            icon="document"
+            text="New page"
+            onClick={addPage}
+          />
+        )}
+        {exportFlow && (
+          <Button
+            className="bp3-minimal"
+            icon="export"
+            text="Export flow"
+            onClick={exportFlow}
+          />
+        )}
         {openCodeEditor && (
           <Button
             className="bp3-minimal"
