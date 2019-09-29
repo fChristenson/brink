@@ -6,6 +6,7 @@
     "object-literal-sort-keys": false,
     "no-default-export": true,
     "trailing-comma": false,
+    "arrow-parens": false,
     "curly": false,
     "ordered-imports": false
   },

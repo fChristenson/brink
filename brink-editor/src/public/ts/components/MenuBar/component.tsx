@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Button, Alignment } from "@blueprintjs/core";
+import { ContainerMenu } from "./components/ContainerMenu";
 import { config as codeConfig } from "../CodeEditor/config";
 import { config as componentConfig } from "../ComponentEditor/config";
 
@@ -27,6 +28,7 @@ export const MenuBar: React.FunctionComponent<IProps> = ({
       <Navbar.Group align={Alignment.LEFT}>
         <Navbar.Heading>Brink editor</Navbar.Heading>
         <Navbar.Divider />
+        <ContainerMenu />
         <Button
           className="bp3-minimal"
           icon="zoom-in"

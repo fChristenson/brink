@@ -1,5 +1,5 @@
 import React from "react";
 
-export const RootNode = () => {
+export const RootNode: React.FunctionComponent = () => {
   return <div className="root_node"></div>;
 };
