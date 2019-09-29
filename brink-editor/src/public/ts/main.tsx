@@ -6,6 +6,7 @@ import { Canvas } from "./components/Canvas";
 import { ComponentEditor } from "./components/ComponentEditor";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
+import "../libs/dragAndDrop";
 
 const App = () => {
   return (

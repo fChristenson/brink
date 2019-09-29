@@ -1,5 +1,6 @@
 @import "../../../node_modules/@blueprintjs/core/lib/css/blueprint.css";
 @import "../../../node_modules/highlight.js/styles/monokai.css";
+@import "../../../node_modules/@blueprintjs/core/lib/less/variables.less";
 @import "./global.css";
 @import "../ts/components/Canvas/components/RootNode/styles.css";
 @import "../ts/components/Canvas/styles.css";

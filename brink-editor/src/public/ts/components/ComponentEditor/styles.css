@@ -1,6 +1,6 @@
 .component_editor {
   flex: 0 0 300px;
-  background: steelblue;
+  background: var(--color-blue1);
 }
 
 .component_editor--hidden {

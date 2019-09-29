@@ -1,7 +1,5 @@
 import React from "react";
 import { RootNode } from "./components/RootNode";
-import { Hotkeys, Hotkey } from "@blueprintjs/core";
-import { config } from "./config";
 
 interface IProps {
   zoom: number;

@@ -1,5 +1,6 @@
 .code_editor {
   flex: 0 0 300px;
+  background: var(--color-blue1);
 }
 
 .code_editor--hidden {
