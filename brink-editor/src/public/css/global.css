@@ -8,7 +8,12 @@
 
 :root {
   --menu-height: 50px;
+  --edit-text-height: 18px;
+
   --margin-md: 12px;
+  --margin-s: 8px;
+  --margin-xs: 4px;
 
   --color-blue1: #2f404d;
+  --color-black1: #10161a;
 }

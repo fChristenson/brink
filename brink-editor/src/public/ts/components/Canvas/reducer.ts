@@ -7,8 +7,11 @@ export const reducer = (state: ICanvasState = initState, action: IAction) => {
     case CanvasEvents.ADD_ROOT_NODE:
       return { ...state, rootNodes: state.rootNodes.concat([action.payload]) };
 
-    case CanvasEvents.ZOOM:
-      return { ...state, zoom: action.payload };
+    case CanvasEvents.REMOVE_ROOT_NODE:
+      return {
+        ...state,
+        rootNodes: state.rootNodes.filter(n => n.id !== action.payload.id)
+      };
 
     default:
       return state;

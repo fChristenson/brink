@@ -1,24 +1,18 @@
 import React from "react";
 import ReactDom from "react-dom";
-import { CodeEditor } from "./components/CodeEditor";
-import { MenuBar } from "./components/MenuBar";
-import { Canvas } from "./components/Canvas";
-import { ComponentEditor } from "./components/ComponentEditor";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
+import { FlowEditor } from "./components/FlowEditor";
 import "../libs/dragAndDrop";
+import { BrowserRouter, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <Provider store={store}>
-      <div className="bp3-dark">
-        <MenuBar />
-        <div className="content">
-          <CodeEditor />
-          <Canvas />
-          <ComponentEditor />
-        </div>
-      </div>
+      <BrowserRouter>
+        <Route exact path="/" render={() => <FlowEditor />} />
+        <Route exact path="/page" render={() => <FlowEditor />} />
+      </BrowserRouter>
     </Provider>
   );
 };

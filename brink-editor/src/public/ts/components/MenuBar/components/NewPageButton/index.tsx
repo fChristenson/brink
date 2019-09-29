@@ -1,6 +1,6 @@
 import { compose } from "redux";
 import { connect } from "react-redux";
-import { ContainerMenu as Component } from "./component";
+import { NewPageButton as Component } from "./component";
 import { Dispatch } from "react";
 import { IAction } from "../../../../store/action";
 import { AddRootNode } from "../../../Canvas/actions";
@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch: Dispatch<IAction>) => {
   };
 };
 
-export const ContainerMenu = compose(
+export const NewPageButton = compose(
   connect(
     null,
     mapDispatchToProps

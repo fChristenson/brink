@@ -5,8 +5,7 @@ import { IState } from "../../store/state";
 
 const mapStateToProps = (state: IState) => {
   return {
-    rootNodes: state.canvas.rootNodes,
-    zoom: state.canvas.zoom
+    rootNodes: state.canvas.rootNodes
   };
 };
 
