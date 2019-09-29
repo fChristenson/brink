@@ -13,6 +13,19 @@ export const reducer = (state: ICanvasState = initState, action: IAction) => {
         rootNodes: state.rootNodes.filter(n => n.id !== action.payload.id)
       };
 
+    case CanvasEvents.MOVE_ROOT_NODE:
+      return {
+        ...state,
+        rootNodes: state.rootNodes.map(n => {
+          if (n.id === action.payload.id) {
+            n.x = action.payload.x;
+            n.y = action.payload.y;
+          }
+
+          return n;
+        })
+      };
+
     default:
       return state;
   }

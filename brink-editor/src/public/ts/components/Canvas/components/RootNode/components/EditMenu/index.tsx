@@ -8,7 +8,7 @@ import { IRootNode } from "../../RootNode";
 import { RemoveRootNode } from "../../../../actions";
 import { withRouter, RouteComponentProps } from "react-router";
 
-interface IProps {
+interface IProps extends RouteComponentProps {
   rootNode: IRootNode;
   children: any;
 }
@@ -21,7 +21,7 @@ const mapStateToProps = (_: IState, { rootNode }: IProps) => {
 
 const mapDispatchToProps = (
   dispatch: Dispatch<IAction>,
-  { history }: IProps & RouteComponentProps
+  { history }: IProps
 ) => {
   return {
     onEdit: (rootNode: IRootNode) => history.push(`/page`),
@@ -31,7 +31,7 @@ const mapDispatchToProps = (
   };
 };
 
-export const EditMenu = compose(
+export const EditMenu = compose<any>(
   withRouter,
   connect(
     mapStateToProps,

@@ -1,5 +1,8 @@
 import interact from "interactjs";
 import { config } from "../../ts/components/Canvas/components/RootNode/config";
+import { store } from "../../ts/store/store";
+import { MoveRootNode } from "../../ts/components/Canvas/actions";
+import { getTransform } from "../../ts/components/Canvas/components/RootNode/getTransform";
 
 function dragMoveListener(event: any) {
   const target = event.target;
@@ -8,9 +11,12 @@ function dragMoveListener(event: any) {
     (parseFloat(target.getAttribute(config.xAttributeName)) || 0) + event.dx;
   const y =
     (parseFloat(target.getAttribute(config.yAttributeName)) || 0) + event.dy;
+  const id = target.getAttribute(config.idAttributeName);
+
+  store.dispatch(MoveRootNode({ id, x, y }));
 
   // translate the element
-  target.style.webkitTransform = target.style.transform = `translate(${x}px, ${y}px)`;
+  target.style.webkitTransform = target.style.transform = getTransform(x, y);
 
   // update the posiion attributes
   target.setAttribute(config.xAttributeName, x);
