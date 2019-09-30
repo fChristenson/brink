@@ -4,18 +4,22 @@ import { IRootNode } from "../../RootNode";
 
 interface IProps {
   rootNode: IRootNode;
+  hasConnection?: boolean;
   onEdit(node: IRootNode): void;
-  onConnect(node: IRootNode): void;
+  onConnect(node: IRootNode, fromRootNode?: IRootNode): void;
   onExport(node: IRootNode): void;
   onDelete(node: IRootNode): void;
+  onConnectionDelete(node: IRootNode): void;
 }
 
 export const SubMenu: React.FunctionComponent<IProps> = ({
   rootNode,
+  hasConnection,
   onEdit,
   onConnect,
   onExport,
-  onDelete
+  onDelete,
+  onConnectionDelete
 }) => {
   return (
     <Menu>
@@ -37,6 +41,14 @@ export const SubMenu: React.FunctionComponent<IProps> = ({
         text="Delete"
         onClick={() => onDelete(rootNode)}
       />
+      {hasConnection && (
+        <MenuItem
+          intent="danger"
+          icon="delete"
+          text="Delete connection"
+          onClick={() => onConnectionDelete(rootNode)}
+        />
+      )}
     </Menu>
   );
 };

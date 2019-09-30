@@ -5,7 +5,9 @@ import { IState } from "../../store/state";
 
 const mapStateToProps = (state: IState) => {
   return {
-    rootNodes: state.canvas.rootNodes
+    rootNodes: state.canvas.rootNodes,
+    connections: state.canvas.connections,
+    fromRootNode: state.canvas.fromRootNode
   };
 };
 

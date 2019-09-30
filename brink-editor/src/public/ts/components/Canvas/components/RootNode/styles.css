@@ -16,3 +16,22 @@
   border: 1px solid var(--color-black1);
   height: calc(100% - var(--edit-text-height) - var(--margin-xs) - 1px);
 }
+
+.root_node--to-outline::before,
+.root_node--from-outline::before {
+  content: "";
+  z-index: -1;
+  outline: dashed 6px var(--color-orange1);
+  width: 127%;
+  height: 111%;
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  top: 50%;
+}
+
+.root_node--to-outline::before {
+  outline: dashed 6px var(--color-green1);
+}

@@ -5,17 +5,23 @@ import { IState } from "../../../../../../store/state";
 import { Dispatch } from "react";
 import { IAction } from "../../../../../../store/action";
 import { IRootNode } from "../../RootNode";
-import { RemoveRootNode } from "../../../../actions";
+import {
+  RemoveRootNode,
+  SelectFromRootNode,
+  DeleteConnection
+} from "../../../../actions";
 import { withRouter, RouteComponentProps } from "react-router";
+import { hasConnection } from "../../utils";
 
 interface IProps extends RouteComponentProps {
   rootNode: IRootNode;
   children: any;
 }
 
-const mapStateToProps = (_: IState, { rootNode }: IProps) => {
+const mapStateToProps = (state: IState, { rootNode }: IProps) => {
   return {
-    rootNode
+    rootNode,
+    hasConnection: state.canvas.connections.some(hasConnection(rootNode))
   };
 };
 
@@ -25,9 +31,14 @@ const mapDispatchToProps = (
 ) => {
   return {
     onEdit: (rootNode: IRootNode) => history.push(`/page`),
-    onConnect: (rootNode: IRootNode) => alert(rootNode),
+    onConnect: (rootNode: IRootNode) => dispatch(SelectFromRootNode(rootNode)),
     onExport: (rootNode: IRootNode) => alert(rootNode),
-    onDelete: (rootNode: IRootNode) => dispatch(RemoveRootNode(rootNode))
+    onDelete: (rootNode: IRootNode) => {
+      dispatch(DeleteConnection(rootNode));
+      dispatch(RemoveRootNode(rootNode));
+    },
+    onConnectionDelete: (rootNode: IRootNode) =>
+      dispatch(DeleteConnection(rootNode))
   };
 };
 

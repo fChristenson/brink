@@ -1,9 +1,31 @@
 import { IAction } from "../../store/action";
 import { CanvasEvents } from "./events";
 import { initState, ICanvasState } from "./state";
+import { hasConnection } from "./components/RootNode/utils";
 
 export const reducer = (state: ICanvasState = initState, action: IAction) => {
   switch (action.type) {
+    case CanvasEvents.SELECT_FROM_ROOT_NODE:
+      return {
+        ...state,
+        fromRootNode: action.payload
+      };
+
+    case CanvasEvents.CONNECT_ROOT_NODES:
+      return {
+        ...state,
+        fromRootNode: undefined,
+        connections: state.connections.concat([action.payload])
+      };
+
+    case CanvasEvents.DELETE_CONNECTION:
+      return {
+        ...state,
+        connections: state.connections.filter(
+          c => !hasConnection(action.payload)(c)
+        )
+      };
+
     case CanvasEvents.ADD_ROOT_NODE:
       return { ...state, rootNodes: state.rootNodes.concat([action.payload]) };
 

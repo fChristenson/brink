@@ -3,10 +3,14 @@ import { EditableText, Icon } from "@blueprintjs/core";
 import { EditMenu } from "./components/EditMenu";
 import { IRootNode } from "./RootNode";
 import { config } from "./config";
-import { getTransform } from "./getTransform";
+import { getTransform } from "./utils";
 
 interface IProps {
   rootNode: IRootNode;
+  fromRootNode?: IRootNode;
+  fromOutline?: boolean;
+  toOutline?: boolean;
+  onClick(rootNode: IRootNode, fromRootNode?: IRootNode): void;
   onChange(rootNode: IRootNode, title: string): void;
 }
 
@@ -24,16 +28,31 @@ export class RootNode extends React.Component<IProps> {
   }
 
   public render() {
+    const {
+      onClick,
+      onChange,
+      rootNode,
+      toOutline,
+      fromOutline,
+      fromRootNode
+    } = this.props;
+    const toOutlineClass = toOutline ? "root_node--to-outline" : "";
+    const fromOutlineClass = fromOutline ? "root_node--from-outline" : "";
+
     return (
-      <div ref="rootNode" className="root_node">
+      <div
+        onClick={() => onClick(rootNode, fromRootNode)}
+        ref="rootNode"
+        className={`${rootNode.id} ${fromOutlineClass} ${toOutlineClass} root_node`}
+      >
         <EditableText
-          defaultValue={this.props.rootNode.title}
+          defaultValue={rootNode.title}
           intent="primary"
           maxLength={config.titleMaxLength}
-          onChange={text => this.props.onChange(this.props.rootNode, text)}
+          onChange={text => onChange(rootNode, text)}
         />
         <div className="root_node__body">
-          <EditMenu rootNode={this.props.rootNode}>
+          <EditMenu rootNode={rootNode}>
             <Icon className="root_node__cog" intent="primary" icon="cog" />
           </EditMenu>
         </div>

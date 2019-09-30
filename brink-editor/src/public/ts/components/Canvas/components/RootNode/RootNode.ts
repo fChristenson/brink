@@ -13,3 +13,8 @@ export const RootNode = (x: number, y: number) => {
     y
   };
 };
+
+export interface IConnection {
+  from: IRootNode;
+  to: IRootNode;
+}

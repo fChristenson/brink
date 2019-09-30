@@ -2,7 +2,7 @@ import interact from "interactjs";
 import { config } from "../../ts/components/Canvas/components/RootNode/config";
 import { store } from "../../ts/store/store";
 import { MoveRootNode } from "../../ts/components/Canvas/actions";
-import { getTransform } from "../../ts/components/Canvas/components/RootNode/getTransform";
+import { getTransform } from "../../ts/components/Canvas/components/RootNode/utils";
 
 function dragMoveListener(event: any) {
   const target = event.target;
