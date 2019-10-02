@@ -3,7 +3,7 @@ export interface IAction {
   payload: any;
 }
 
-export const makeAction = (type: string) => (payload: any): IAction => {
+export const makeAction = <T>(type: string) => (payload: T): IAction => {
   return {
     type,
     payload

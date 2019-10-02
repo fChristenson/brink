@@ -1,7 +1,10 @@
 import { IAction } from "../../store/action";
 import { CanvasEvents } from "./events";
 import { initState, ICanvasState } from "./state";
-import { hasConnection } from "./components/RootNode/utils";
+import {
+  hasConnection,
+  hasOutgoingConnection
+} from "./components/RootNode/utils";
 
 export const reducer = (state: ICanvasState = initState, action: IAction) => {
   switch (action.type) {
@@ -22,7 +25,7 @@ export const reducer = (state: ICanvasState = initState, action: IAction) => {
       return {
         ...state,
         connections: state.connections.filter(
-          c => !hasConnection(action.payload)(c)
+          c => !hasOutgoingConnection(action.payload)(c)
         )
       };
 
@@ -32,7 +35,10 @@ export const reducer = (state: ICanvasState = initState, action: IAction) => {
     case CanvasEvents.REMOVE_ROOT_NODE:
       return {
         ...state,
-        rootNodes: state.rootNodes.filter(n => n.id !== action.payload.id)
+        rootNodes: state.rootNodes.filter(n => n.id !== action.payload.id),
+        connections: state.connections.filter(
+          c => !hasConnection(action.payload)(c)
+        )
       };
 
     case CanvasEvents.SET_ROOT_NODE_TITLE:

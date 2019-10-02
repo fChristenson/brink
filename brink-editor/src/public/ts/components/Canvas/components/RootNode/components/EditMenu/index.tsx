@@ -11,7 +11,7 @@ import {
   DeleteConnection
 } from "../../../../actions";
 import { withRouter, RouteComponentProps } from "react-router";
-import { hasConnection } from "../../utils";
+import { hasOutgoingConnection } from "../../utils";
 
 interface IProps extends RouteComponentProps {
   rootNode: IRootNode;
@@ -21,7 +21,9 @@ interface IProps extends RouteComponentProps {
 const mapStateToProps = (state: IState, { rootNode }: IProps) => {
   return {
     rootNode,
-    hasConnection: state.canvas.connections.some(hasConnection(rootNode))
+    hasConnection: state.canvas.connections.some(
+      hasOutgoingConnection(rootNode)
+    )
   };
 };
 

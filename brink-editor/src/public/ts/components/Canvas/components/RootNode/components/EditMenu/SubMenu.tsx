@@ -45,7 +45,7 @@ export const SubMenu: React.FunctionComponent<IProps> = ({
         <MenuItem
           intent="danger"
           icon="delete"
-          text="Delete connection"
+          text="Delete connections"
           onClick={() => onConnectionDelete(rootNode)}
         />
       )}

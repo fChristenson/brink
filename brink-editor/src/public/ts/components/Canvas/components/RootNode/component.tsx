@@ -1,16 +1,24 @@
 import React from "react";
 import { EditableText, Icon } from "@blueprintjs/core";
 import { EditMenu } from "./components/EditMenu";
-import { IRootNode } from "./RootNode";
+import { IRootNode, IConnection } from "./RootNode";
 import { config } from "./config";
 import { getTransform } from "./utils";
+import { ArcherElement } from "react-archer";
+import { getToId } from "../../relations";
 
 interface IProps {
   rootNode: IRootNode;
   fromRootNode?: IRootNode;
   fromOutline?: boolean;
   toOutline?: boolean;
-  onClick(rootNode: IRootNode, fromRootNode?: IRootNode): void;
+  children: any;
+  connections: IConnection[];
+  onClick(
+    rootNode: IRootNode,
+    connections: IConnection[],
+    fromRootNode?: IRootNode
+  ): void;
   onChange(rootNode: IRootNode, title: string): void;
 }
 
@@ -34,16 +42,19 @@ export class RootNode extends React.Component<IProps> {
       rootNode,
       toOutline,
       fromOutline,
-      fromRootNode
+      fromRootNode,
+      connections,
+      children
     } = this.props;
     const toOutlineClass = toOutline ? "root_node--to-outline" : "";
     const fromOutlineClass = fromOutline ? "root_node--from-outline" : "";
 
     return (
       <div
-        onClick={() => onClick(rootNode, fromRootNode)}
+        id={rootNode.id}
+        onClick={() => onClick(rootNode, connections, fromRootNode)}
         ref="rootNode"
-        className={`${rootNode.id} ${fromOutlineClass} ${toOutlineClass} root_node`}
+        className={`${fromOutlineClass} ${toOutlineClass} root_node`}
       >
         <EditableText
           defaultValue={rootNode.title}
@@ -55,6 +66,8 @@ export class RootNode extends React.Component<IProps> {
           <EditMenu rootNode={rootNode}>
             <Icon className="root_node__cog" intent="primary" icon="cog" />
           </EditMenu>
+          <ArcherElement id={getToId(rootNode.id)} />
+          {children}
         </div>
       </div>
     );

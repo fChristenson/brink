@@ -4,4 +4,8 @@ export const getTransform = (x: number, y: number) =>
   `translate(${x}px, ${y}px)`;
 
 export const hasConnection = (rootNode: IRootNode) => (c: IConnection) =>
-  c.from.id === rootNode.id || c.to.id === rootNode.id;
+  c.from === rootNode.id || c.to === rootNode.id;
+
+export const hasOutgoingConnection = (rootNode: IRootNode) => (
+  c: IConnection
+) => c.from === rootNode.id;

@@ -3,6 +3,7 @@ import { config } from "../../ts/components/Canvas/components/RootNode/config";
 import { store } from "../../ts/store/store";
 import { MoveRootNode } from "../../ts/components/Canvas/actions";
 import { getTransform } from "../../ts/components/Canvas/components/RootNode/utils";
+import { RootNode } from "../../ts/components/Canvas/components/RootNode/RootNode";
 
 function dragMoveListener(event: any) {
   const target = event.target;
@@ -13,7 +14,7 @@ function dragMoveListener(event: any) {
     (parseFloat(target.getAttribute(config.yAttributeName)) || 0) + event.dy;
   const id = target.getAttribute(config.idAttributeName);
 
-  store.dispatch(MoveRootNode({ id, x, y }));
+  store.dispatch(MoveRootNode(RootNode(x, y, id)));
 
   // translate the element
   target.style.webkitTransform = target.style.transform = getTransform(x, y);

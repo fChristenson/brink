@@ -15,7 +15,7 @@ const mapStateToProps = (_: IState) => {
 
 const mapDispatchToProps = (dispatch: Dispatch<IAction>) => {
   return {
-    addPage: () => dispatch(AddRootNode(RootNode())),
+    addPage: () => dispatch(AddRootNode(RootNode(0, 0))),
     exportFlow: () => alert("export")
   };
 };
