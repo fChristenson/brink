@@ -1,6 +1,7 @@
 import { makeAction } from "../../store/action";
 import { CanvasEvents } from "./events";
-import { IRootNode, IConnection } from "./components/RootNode/RootNode";
+import { IRootNode } from "./components/RootNode/RootNode";
+import { IConnection } from "./components/RootNode/Connection";
 
 export const AddRootNode = makeAction<IRootNode>(CanvasEvents.ADD_ROOT_NODE);
 export const RemoveRootNode = makeAction<IRootNode>(
@@ -16,6 +17,9 @@ export const SelectFromRootNode = makeAction<IRootNode | undefined>(
 export const ConnectRootNodes = makeAction<IConnection>(
   CanvasEvents.CONNECT_ROOT_NODES
 );
-export const DeleteConnection = makeAction<IRootNode>(
+export const DeleteConnection = makeAction<IConnection>(
   CanvasEvents.DELETE_CONNECTION
+);
+export const DeleteAllConnections = makeAction<IRootNode>(
+  CanvasEvents.DELETE_ALL_CONNECTIONS
 );

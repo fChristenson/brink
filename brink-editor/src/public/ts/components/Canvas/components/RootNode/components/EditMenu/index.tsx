@@ -8,10 +8,11 @@ import { IRootNode } from "../../RootNode";
 import {
   RemoveRootNode,
   SelectFromRootNode,
-  DeleteConnection
+  DeleteConnection,
+  DeleteAllConnections
 } from "../../../../actions";
 import { withRouter, RouteComponentProps } from "react-router";
-import { hasOutgoingConnection } from "../../utils";
+import { IConnection } from "../../Connection";
 
 interface IProps extends RouteComponentProps {
   rootNode: IRootNode;
@@ -21,9 +22,8 @@ interface IProps extends RouteComponentProps {
 const mapStateToProps = (state: IState, { rootNode }: IProps) => {
   return {
     rootNode,
-    hasConnection: state.canvas.connections.some(
-      hasOutgoingConnection(rootNode)
-    )
+    rootNodes: state.canvas.rootNodes,
+    connections: state.canvas.connections
   };
 };
 
@@ -36,11 +36,13 @@ const mapDispatchToProps = (
     onConnect: (rootNode: IRootNode) => dispatch(SelectFromRootNode(rootNode)),
     onExport: (rootNode: IRootNode) => alert(rootNode),
     onDelete: (rootNode: IRootNode) => {
-      dispatch(DeleteConnection(rootNode));
+      dispatch(DeleteAllConnections(rootNode));
       dispatch(RemoveRootNode(rootNode));
     },
-    onConnectionDelete: (rootNode: IRootNode) =>
-      dispatch(DeleteConnection(rootNode))
+    onDeleteConnection: (connection: IConnection) =>
+      dispatch(DeleteConnection(connection)),
+    onDeleteAllConnections: (rootNode: IRootNode) =>
+      dispatch(DeleteAllConnections(rootNode))
   };
 };
 

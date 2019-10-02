@@ -21,12 +21,18 @@ export const reducer = (state: ICanvasState = initState, action: IAction) => {
         connections: state.connections.concat([action.payload])
       };
 
-    case CanvasEvents.DELETE_CONNECTION:
+    case CanvasEvents.DELETE_ALL_CONNECTIONS:
       return {
         ...state,
         connections: state.connections.filter(
           c => !hasOutgoingConnection(action.payload)(c)
         )
+      };
+
+    case CanvasEvents.DELETE_CONNECTION:
+      return {
+        ...state,
+        connections: state.connections.filter(c => c.id !== action.payload.id)
       };
 
     case CanvasEvents.ADD_ROOT_NODE:

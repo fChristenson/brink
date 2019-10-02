@@ -2,38 +2,42 @@ import React from "react";
 import { Popover } from "@blueprintjs/core";
 import { SubMenu } from "./SubMenu";
 import { IRootNode } from "../../RootNode";
+import { IConnection } from "../../Connection";
 
 interface IProps {
   rootNode: IRootNode;
-  hasConnection?: boolean;
+  connections: IConnection[];
   onEdit(node: IRootNode): void;
   onConnect(node: IRootNode, fromRootNode?: IRootNode): void;
   onExport(node: IRootNode): void;
   onDelete(node: IRootNode): void;
-  onConnectionDelete(node: IRootNode): void;
+  onDeleteConnection(connection: IConnection): void;
+  onDeleteAllConnections(node: IRootNode): void;
 }
 
 export const EditMenu: React.FunctionComponent<IProps> = ({
   children,
   rootNode,
-  hasConnection,
+  connections,
   onEdit,
   onConnect,
   onExport,
   onDelete,
-  onConnectionDelete
+  onDeleteConnection,
+  onDeleteAllConnections
 }) => {
   return (
     <Popover
       content={
         <SubMenu
           rootNode={rootNode}
-          hasConnection={hasConnection}
+          connections={connections}
           onEdit={onEdit}
           onConnect={onConnect}
           onExport={onExport}
           onDelete={onDelete}
-          onConnectionDelete={onConnectionDelete}
+          onDeleteConnection={onDeleteConnection}
+          onDeleteAllConnections={onDeleteAllConnections}
         />
       }
     >

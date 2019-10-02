@@ -33,8 +33,8 @@ export const Canvas: React.FunctionComponent<IProps> = ({
             {connections
               .filter(c => c.from === node.id)
               .map((c, i) => {
-                const fromX = c.getRootNodeById(c.from, rootNodes).x;
-                const toX = c.getRootNodeById(c.to, rootNodes).x;
+                const from = c.getRootNodeById(c.from, rootNodes);
+                const to = c.getRootNodeById(c.to, rootNodes);
 
                 return (
                   <ArcherElement
@@ -42,9 +42,9 @@ export const Canvas: React.FunctionComponent<IProps> = ({
                     id={getFromId(c.from, i)}
                     relations={[
                       RelationConfig(
-                        getToId(c.to),
-                        "Test1",
-                        getAnchorPosition(fromX, toX)
+                        getToId(to.id),
+                        `goTo${to.title}`,
+                        getAnchorPosition(from.x, to.x)
                       )
                     ]}
                   />

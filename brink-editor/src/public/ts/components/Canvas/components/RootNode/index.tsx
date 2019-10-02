@@ -8,8 +8,9 @@ import {
   ConnectRootNodes,
   SelectFromRootNode
 } from "../../actions";
-import { IRootNode, IConnection, Connection } from "./RootNode";
+import { IRootNode } from "./RootNode";
 import { IState } from "../../../../store/state";
+import { IConnection, Connection } from "./Connection";
 
 interface IProps {
   rootNode: IRootNode;

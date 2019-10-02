@@ -17,7 +17,9 @@ export const RelationConfig = (
     style: { strokeColor: color, strokeWidth: 1 },
     label: (
       <div
+        onClick={() => alert(1)}
         style={{
+          cursor: "pointer",
           color,
           background: "white",
           marginTop: targetAnchor === "left" ? "-20px" : "20px"
