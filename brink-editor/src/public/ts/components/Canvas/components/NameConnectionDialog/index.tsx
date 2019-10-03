@@ -5,10 +5,20 @@ import { IState } from "../../../../store/state";
 import { IConnection, Connection } from "../RootNode/Connection";
 import { IAction } from "../../../../store/action";
 import { CreateConnection, AddTag, ConnectRootNodes } from "../../actions";
+import { capitalize } from "../RootNode/utils";
 
 const mapStateToProps = (state: IState) => {
+  const { connectionToName, rootNodes } = state.canvas;
+
+  const name = connectionToName
+    ? capitalize(
+        connectionToName.getRootNodeById(connectionToName.to, rootNodes).title
+      )
+    : "";
+
   return {
     tags: state.canvas.tags,
+    defaultName: name ? `goTo${name}` : "",
     connectionToName: state.canvas.connectionToName
   };
 };

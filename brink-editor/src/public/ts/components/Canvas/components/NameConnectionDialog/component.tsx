@@ -6,6 +6,7 @@ import { config } from "./config";
 interface IProps {
   tags: string[];
   connectionToName?: IConnection;
+  defaultName: string;
   onCancel(): void;
   onSubmit(
     event: React.FormEvent<HTMLFormElement>,
@@ -16,10 +17,15 @@ interface IProps {
 export const NameConnectionDialog: React.FunctionComponent<IProps> = ({
   onSubmit,
   onCancel,
+  defaultName,
   tags,
   connectionToName
 }) => {
   const [name, setName] = React.useState("");
+
+  React.useEffect(() => {
+    setName(defaultName);
+  }, [defaultName]);
 
   return (
     <Dialog
@@ -45,7 +51,11 @@ export const NameConnectionDialog: React.FunctionComponent<IProps> = ({
           value={name}
           type="text"
           rightElement={
-            <Button disabled={name.length < 1} type="submit" icon="confirm" />
+            <Button
+              disabled={!name || name.length < 1}
+              type="submit"
+              icon="confirm"
+            />
           }
           placeholder="Connection name"
           autoFocus
