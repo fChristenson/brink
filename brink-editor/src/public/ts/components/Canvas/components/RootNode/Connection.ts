@@ -2,14 +2,21 @@ import { IRootNode } from "./RootNode";
 
 export interface IConnection {
   id: string;
+  name?: string;
   from: string;
   to: string;
   getRootNodeById(id: string, rootNodes: IRootNode[]): IRootNode;
 }
 
-export const Connection = (from: string, to: string): IConnection => {
+export const Connection = (
+  from: string,
+  to: string,
+  name?: string,
+  id?: string
+): IConnection => {
   return {
-    id: Math.random().toString(),
+    id: id || Math.random().toString(),
+    name,
     from,
     to,
     getRootNodeById: (nodeId: string, rootNodes: IRootNode[]) => {

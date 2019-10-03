@@ -10,8 +10,10 @@
   --menu-height: 50px;
   --edit-text-height: 18px;
 
+  --margin-xl: 20px;
+  --margin-l: 16px;
   --margin-md: 12px;
-  --margin-s: 8px;
+  --margin-sm: 8px;
   --margin-xs: 4px;
 
   --color-blue1: #2f404d;

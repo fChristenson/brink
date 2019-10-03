@@ -1,0 +1,19 @@
+.name_connection_dialog__tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: var(--margin-md) auto 0;
+  align-items: center;
+  justify-content: center;
+  max-height: 200px;
+  overflow: auto;
+}
+
+.name_connection_dialog__h2 {
+  text-align: center;
+  margin-top: calc(var(--margin-xl) * 2);
+}
+
+.name_connection_dialog__tag {
+  margin: var(--margin-sm);
+}

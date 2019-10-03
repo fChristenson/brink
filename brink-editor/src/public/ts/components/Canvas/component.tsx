@@ -1,6 +1,6 @@
 import React from "react";
 import { RootNode } from "./components/RootNode";
-import { IRootNode, IConnection } from "./components/RootNode/RootNode";
+import { IRootNode } from "./components/RootNode/RootNode";
 import { ArcherContainer, ArcherElement } from "react-archer";
 import {
   RelationConfig,
@@ -8,6 +8,7 @@ import {
   getFromId,
   getAnchorPosition
 } from "./relations";
+import { IConnection } from "./components/RootNode/Connection";
 
 interface IProps {
   rootNodes: IRootNode[];
@@ -43,7 +44,7 @@ export const Canvas: React.FunctionComponent<IProps> = ({
                     relations={[
                       RelationConfig(
                         getToId(to.id),
-                        `goTo${to.title}`,
+                        c.name || "",
                         getAnchorPosition(from.x, to.x)
                       )
                     ]}

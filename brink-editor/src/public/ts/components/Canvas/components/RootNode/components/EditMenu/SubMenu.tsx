@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, MenuItem, MenuDivider } from "@blueprintjs/core";
+import { Menu, MenuItem, MenuDivider, Text } from "@blueprintjs/core";
 import { IRootNode } from "../../RootNode";
 import { hasOutgoingConnection } from "../../utils";
 import { IConnection } from "../../Connection";
@@ -56,7 +56,7 @@ export const SubMenu: React.FunctionComponent<IProps> = ({
               key={i}
               intent="danger"
               icon="delete"
-              text={`Delete ${c.from}`}
+              text={<Text ellipsize>{`Delete ${c.name}`}</Text>}
               onClick={() => onDeleteConnection(c)}
             />
           ))}

@@ -1,11 +1,12 @@
 import React from "react";
 import { EditableText, Icon } from "@blueprintjs/core";
 import { EditMenu } from "./components/EditMenu";
-import { IRootNode, IConnection } from "./RootNode";
+import { IRootNode } from "./RootNode";
 import { config } from "./config";
 import { getTransform } from "./utils";
 import { ArcherElement } from "react-archer";
 import { getToId } from "../../relations";
+import { IConnection } from "./Connection";
 
 interface IProps {
   rootNode: IRootNode;

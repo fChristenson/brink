@@ -14,11 +14,27 @@ export const reducer = (state: ICanvasState = initState, action: IAction) => {
         fromRootNode: action.payload
       };
 
+    case CanvasEvents.ADD_TAG:
+      return {
+        ...state,
+        tags: state.tags
+          .filter(t => t.toLowerCase() !== action.payload.toLowerCase())
+          .concat([action.payload.toLowerCase()])
+      };
+
+    case CanvasEvents.CREATE_CONNECTION:
+      return {
+        ...state,
+        fromRootNode: undefined,
+        connectionToName: undefined,
+        connections: state.connections.concat([action.payload])
+      };
+
     case CanvasEvents.CONNECT_ROOT_NODES:
       return {
         ...state,
         fromRootNode: undefined,
-        connections: state.connections.concat([action.payload])
+        connectionToName: action.payload
       };
 
     case CanvasEvents.DELETE_ALL_CONNECTIONS:

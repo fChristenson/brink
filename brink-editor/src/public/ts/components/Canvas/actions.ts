@@ -14,8 +14,11 @@ export const SetRootNodeTitle = makeAction<IRootNode>(
 export const SelectFromRootNode = makeAction<IRootNode | undefined>(
   CanvasEvents.SELECT_FROM_ROOT_NODE
 );
-export const ConnectRootNodes = makeAction<IConnection>(
+export const ConnectRootNodes = makeAction<IConnection | undefined>(
   CanvasEvents.CONNECT_ROOT_NODES
+);
+export const CreateConnection = makeAction<IConnection>(
+  CanvasEvents.CREATE_CONNECTION
 );
 export const DeleteConnection = makeAction<IConnection>(
   CanvasEvents.DELETE_CONNECTION
@@ -23,3 +26,4 @@ export const DeleteConnection = makeAction<IConnection>(
 export const DeleteAllConnections = makeAction<IRootNode>(
   CanvasEvents.DELETE_ALL_CONNECTIONS
 );
+export const AddTag = makeAction<string>(CanvasEvents.ADD_TAG);
