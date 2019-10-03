@@ -19,7 +19,7 @@ export const reducer = (state: ICanvasState = initState, action: IAction) => {
         ...state,
         tags: state.tags
           .filter(t => t.toLowerCase() !== action.payload.toLowerCase())
-          .concat([action.payload.toLowerCase()])
+          .concat([action.payload])
       };
 
     case CanvasEvents.CREATE_CONNECTION:
