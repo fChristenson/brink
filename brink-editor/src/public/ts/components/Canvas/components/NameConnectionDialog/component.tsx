@@ -52,6 +52,7 @@ export const NameConnectionDialog: React.FunctionComponent<IProps> = ({
           type="text"
           rightElement={
             <Button
+              className="name_connection_dialog__submit"
               disabled={!name || name.length < 1}
               type="submit"
               icon="confirm"

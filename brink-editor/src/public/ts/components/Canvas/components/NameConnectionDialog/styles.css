@@ -17,3 +17,7 @@
 .name_connection_dialog__tag {
   margin: var(--margin-sm);
 }
+
+.name_connection_dialog__submit {
+  margin-right: var(--margin-sm) !important;
+}
