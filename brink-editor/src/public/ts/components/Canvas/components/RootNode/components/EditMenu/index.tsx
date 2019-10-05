@@ -32,7 +32,7 @@ const mapDispatchToProps = (
   { history }: IProps
 ) => {
   return {
-    onEdit: (rootNode: IRootNode) => history.push(`/page`),
+    onEdit: (rootNode: IRootNode) => history.push(`/page/${rootNode.id}`),
     onConnect: (rootNode: IRootNode) => dispatch(SelectFromRootNode(rootNode)),
     onExport: (rootNode: IRootNode) => alert(rootNode),
     onDelete: (rootNode: IRootNode) => {

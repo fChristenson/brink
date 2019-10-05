@@ -9,7 +9,7 @@ import { RootNode } from "../Canvas/components/RootNode/RootNode";
 
 const mapStateToProps = (_: IState) => {
   return {
-    title: "Brink flow editor"
+    title: "Brink"
   };
 };
 

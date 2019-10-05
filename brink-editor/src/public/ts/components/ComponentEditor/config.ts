@@ -4,6 +4,6 @@ interface IConfig {
 }
 
 export const config: IConfig = {
-  title: "Component editor",
+  title: "Component settings",
   icon: "settings"
 };

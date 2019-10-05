@@ -1,0 +1,4 @@
+.page_node {
+  min-height: calc(100vh - var(--menu-height));
+  margin: 0 auto;
+}

@@ -6,7 +6,10 @@ import {
   hasOutgoingConnection
 } from "./components/RootNode/utils";
 
-export const reducer = (state: ICanvasState = initState, action: IAction) => {
+export const reducer = (
+  state: ICanvasState = initState,
+  action: IAction
+): ICanvasState => {
   switch (action.type) {
     case CanvasEvents.SELECT_FROM_ROOT_NODE:
       return {

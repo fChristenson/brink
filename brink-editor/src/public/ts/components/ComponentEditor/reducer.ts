@@ -5,7 +5,7 @@ import { initState, IComponentEditorState } from "./state";
 export const reducer = (
   state: IComponentEditorState = initState,
   action: IAction
-) => {
+): IComponentEditorState => {
   switch (action.type) {
     case ComponentEditor.OPEN:
       return { ...state, open: action.payload };

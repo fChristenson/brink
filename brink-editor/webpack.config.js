@@ -5,6 +5,7 @@ const distPath = path.resolve(__dirname, "dist");
 module.exports = {
   entry: path.resolve(__dirname, "src", "public", "ts", "main.tsx"),
   output: {
+    publicPath: "/",
     path: distPath,
     filename: "bundle.js"
   },

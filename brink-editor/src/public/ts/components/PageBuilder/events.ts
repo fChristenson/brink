@@ -1,0 +1,4 @@
+export enum PageBuilderEvents {
+  SET_NODE_TO_PLACE = "PAGE_BUILDER/SET_NODE_TO_PLACE",
+  ADD_NODE = "PAGE_BUILDER/ADD_NODE"
+}

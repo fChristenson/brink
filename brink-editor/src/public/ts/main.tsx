@@ -11,8 +11,8 @@ const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <Route exact path="/" render={() => <FlowEditor />} />
-        <Route exact path="/page" render={() => <PageEditor />} />
+        <Route exact path="/" component={FlowEditor} />
+        <Route exact path="/page/:id" component={PageEditor} />
       </BrowserRouter>
     </Provider>
   );

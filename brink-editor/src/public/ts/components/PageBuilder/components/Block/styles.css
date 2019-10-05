@@ -1,0 +1,28 @@
+.block--full-height,
+.block {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s ease-in-out;
+  background: var(--color-blue2);
+  opacity: var(--highlight-containers-opacity);
+  cursor: var(--highlight-containers-pointer);
+}
+
+.block:hover,
+.block--full-height:hover {
+  cursor: var(--highlight-containers-pointer);
+}
+
+.block--full-height {
+  min-height: calc(100vh - var(--menu-height));
+}
+
+.block__h2 {
+  user-select: none;
+  opacity: var(--highlight-containers-opacity);
+  color: white;
+}
