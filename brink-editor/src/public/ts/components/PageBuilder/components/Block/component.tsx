@@ -1,6 +1,8 @@
 import React from "react";
 
 interface IProps {
+  id: string;
+  nodeToPlace: string;
   fullHeight?: boolean;
   width?: string;
   height?: string;
@@ -9,6 +11,8 @@ interface IProps {
 }
 
 export const Block: React.FunctionComponent<IProps> = ({
+  id,
+  nodeToPlace,
   fullHeight,
   name,
   width,
@@ -19,7 +23,7 @@ export const Block: React.FunctionComponent<IProps> = ({
 
   return (
     <div
-      onClick={() => addNode("Button", "id")}
+      onClick={() => addNode(nodeToPlace, id)}
       className={className}
       style={{ width, height }}
     >

@@ -7,5 +7,5 @@ export interface IPageBuilderState {
 
 export const initState: IPageBuilderState = {
   nodeToPlace: "",
-  nodeTree: Vnode("Page", {}, [Vnode("Block", {}, [], "id")])
+  nodeTree: Vnode("Page", {}, [Vnode("Block")])
 };

@@ -13,9 +13,9 @@ export const SubMenu: React.FunctionComponent<IProps> = ({
 }) => {
   return (
     <Menu>
-      {items.map((c, i) => (
+      {items.map(c => (
         <MenuItem
-          key={i}
+          key={c.id}
           className="bp3-minimal"
           icon={c.icon}
           text={c.text}

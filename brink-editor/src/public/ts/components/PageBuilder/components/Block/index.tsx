@@ -5,6 +5,13 @@ import { Dispatch } from "react";
 import { AddNode } from "../../actions";
 import { Vnode } from "../../Vnode";
 import { IAction } from "../../../../store/action";
+import { IState } from "../../../../store/state";
+
+const mapStateToProps = (state: IState) => {
+  return {
+    nodeToPlace: state.pageBuilder.nodeToPlace
+  };
+};
 
 const mapDispatchToProps = (dispatch: Dispatch<IAction>) => {
   return {
@@ -17,7 +24,7 @@ const mapDispatchToProps = (dispatch: Dispatch<IAction>) => {
 
 export const Block = compose(
   connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
   )
 )(Component);

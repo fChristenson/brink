@@ -1,10 +1,12 @@
 import React from "react";
-import { Block } from "../Block";
+import { ContainerNode } from "../ContainerNode";
 
 export const PageNode: React.FunctionComponent = ({ children }) => {
   return (
     <div className="page_node">
-      {children || <Block name="Page" fullHeight />}
+      <ContainerNode name="Page" fullHeight>
+        {children}
+      </ContainerNode>
     </div>
   );
 };

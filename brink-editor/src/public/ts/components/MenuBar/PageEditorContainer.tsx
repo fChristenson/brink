@@ -7,6 +7,7 @@ import { IAction } from "../../store/action";
 import { OpenComponentEditor } from "../ComponentEditor/actions";
 import { IState } from "../../store/state";
 import { SetNodeToPlace } from "../PageBuilder/actions";
+import { highlightBlocks } from "../PageBuilder/components/Block/utils";
 
 export interface IProps {
   id: string;
@@ -28,11 +29,7 @@ const mapStateToProps = (state: IState, { id }: IProps) => {
 const mapDispatchToProps = (dispatch: Dispatch<IAction>) => {
   return {
     startPlaceNode: (nodeToPlace: string) => {
-      document.body.style.setProperty("--highlight-containers-opacity", "1");
-      document.body.style.setProperty(
-        "--highlight-containers-pointer",
-        "pointer"
-      );
+      highlightBlocks(true);
       dispatch(SetNodeToPlace(nodeToPlace));
     },
     openCodeEditor: (open: boolean) => {
