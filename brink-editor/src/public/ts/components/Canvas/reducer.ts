@@ -1,10 +1,10 @@
-import { IAction } from "../../store/action";
 import { CanvasEvents } from "./events";
 import { initState, ICanvasState } from "./state";
 import {
   hasConnection,
   hasOutgoingConnection
 } from "./components/RootNode/utils";
+import { IAction } from "./actions";
 
 export const reducer = (
   state: ICanvasState = initState,

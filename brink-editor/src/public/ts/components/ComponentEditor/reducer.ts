@@ -1,6 +1,6 @@
-import { IAction } from "../../store/action";
 import { ComponentEditor } from "./events";
 import { initState, IComponentEditorState } from "./state";
+import { IAction } from "./actions";
 
 export const reducer = (
   state: IComponentEditorState = initState,

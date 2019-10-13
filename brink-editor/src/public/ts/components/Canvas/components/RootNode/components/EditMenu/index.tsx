@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import { EditMenu as Component } from "./component";
 import { IState } from "../../../../../../store/state";
 import { Dispatch } from "react";
-import { IAction } from "../../../../../../store/action";
 import { IRootNode } from "../../RootNode";
 import {
   RemoveRootNode,
   SelectFromRootNode,
   DeleteConnection,
-  DeleteAllConnections
+  DeleteAllConnections,
+  IAction
 } from "../../../../actions";
 import { withRouter, RouteComponentProps } from "react-router";
 import { IConnection } from "../../Connection";

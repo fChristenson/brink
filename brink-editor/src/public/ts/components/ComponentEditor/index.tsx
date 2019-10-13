@@ -2,9 +2,8 @@ import { compose } from "redux";
 import { connect } from "react-redux";
 import { ComponentEditor as Component } from "./component";
 import { IState } from "../../store/state";
-import { OpenComponentEditor } from "./actions";
+import { OpenComponentEditor, IAction } from "./actions";
 import { Dispatch } from "react";
-import { IAction } from "../../store/action";
 
 const mapStateToProps = (state: IState) => {
   return {

@@ -9,4 +9,4 @@
 @import "../ts/components/Content/styles.css";
 @import "../ts/components/Canvas/components/NameConnectionDialog/styles.css";
 @import "../ts/components/PageBuilder/components/PageNode/styles.css";
-@import "../ts/components/PageBuilder/components/Block/styles.css";
+@import "../ts/components/PageBuilder/components/ContainerNode/styles.css";

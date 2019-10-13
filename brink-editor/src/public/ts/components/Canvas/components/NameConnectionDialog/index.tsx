@@ -3,8 +3,12 @@ import { connect } from "react-redux";
 import { NameConnectionDialog as Component } from "./component";
 import { IState } from "../../../../store/state";
 import { IConnection, Connection } from "../RootNode/Connection";
-import { IAction } from "../../../../store/action";
-import { CreateConnection, AddTag, ConnectRootNodes } from "../../actions";
+import {
+  CreateConnection,
+  AddTag,
+  ConnectRootNodes,
+  IAction
+} from "../../actions";
 import { capitalize } from "../RootNode/utils";
 
 const mapStateToProps = (state: IState) => {

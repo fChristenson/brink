@@ -1,11 +1,3 @@
-import { ICodeEditorState } from "../components/CodeEditor/state";
-import { IComponentEditorState } from "../components/ComponentEditor/state";
-import { ICanvasState } from "../components/Canvas/state";
-import { IPageBuilderState } from "../components/PageBuilder/state";
+import { reducers } from "./reducers";
 
-export interface IState {
-  codeEditor: ICodeEditorState;
-  componentEditor: IComponentEditorState;
-  canvas: ICanvasState;
-  pageBuilder: IPageBuilderState;
-}
+export type IState = ReturnType<typeof reducers>;

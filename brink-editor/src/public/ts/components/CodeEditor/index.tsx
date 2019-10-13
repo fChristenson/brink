@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import { CodeEditor as Component } from "./component";
 import { IState } from "../../store/state";
 import { Dispatch } from "react";
-import { IAction } from "../../store/action";
-import { OpenCodeEditor } from "./actions";
+import { OpenCodeEditor, IAction } from "./actions";
 
 const mapStateToProps = (state: IState) => {
   return {

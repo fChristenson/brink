@@ -1,26 +1,15 @@
-import React from "react";
-import { PageEditorMenuBar } from "../MenuBar/PageEditorContainer";
-import { Content } from "../Content";
-import { Body } from "../Body";
-import { CodeEditor } from "../CodeEditor";
-import { ComponentEditor } from "../ComponentEditor";
+import { compose } from "redux";
+import { connect } from "react-redux";
+import { PageEditor as Component } from "./component";
+import { IState } from "../../store/state";
 import { RouteComponentProps } from "react-router";
-import { PageBuilder } from "../PageBuilder";
 
-export const PageEditor: React.FunctionComponent<RouteComponentProps> = ({
-  match
-}) => {
-  // @ts-ignore
-  const { id } = match.params;
-
-  return (
-    <Body>
-      <PageEditorMenuBar id={id} />
-      <Content>
-        <CodeEditor />
-        <PageBuilder />
-        <ComponentEditor />
-      </Content>
-    </Body>
-  );
+const mapStateToProps = (state: IState, { match }: RouteComponentProps) => {
+  return {
+    // @ts-ignore
+    id: match.params.id,
+    code: state.codeEditor.code
+  };
 };
+
+export const PageEditor = compose(connect(mapStateToProps))(Component);

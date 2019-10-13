@@ -2,11 +2,11 @@ import { compose } from "redux";
 import { connect } from "react-redux";
 import { RootNode as Component } from "./component";
 import { Dispatch } from "react";
-import { IAction } from "../../../../store/action";
 import {
   SetRootNodeTitle,
   ConnectRootNodes,
-  SelectFromRootNode
+  SelectFromRootNode,
+  IAction
 } from "../../actions";
 import { IRootNode } from "./RootNode";
 import { IState } from "../../../../store/state";

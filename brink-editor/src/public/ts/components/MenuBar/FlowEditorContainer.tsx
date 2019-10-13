@@ -2,9 +2,8 @@ import { compose } from "redux";
 import { connect } from "react-redux";
 import { MenuBar as Component } from "./component";
 import { Dispatch } from "react";
-import { IAction } from "../../store/action";
 import { IState } from "../../store/state";
-import { AddRootNode } from "../Canvas/actions";
+import { AddRootNode, IAction } from "../Canvas/actions";
 import { RootNode } from "../Canvas/components/RootNode/RootNode";
 
 const mapStateToProps = (_: IState) => {

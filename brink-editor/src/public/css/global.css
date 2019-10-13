@@ -7,8 +7,6 @@
 }
 
 :root {
-  --highlight-containers-opacity: 0;
-  --highlight-containers-pointer: initial;
   --menu-height: 50px;
   --edit-text-height: 18px;
 
@@ -20,7 +18,9 @@
 
   --color-blue1: #2f404d;
   --color-blue2: #2b95d6;
+  --color-blue3: #0e5a8a;
   --color-black1: #10161a;
   --color-green1: #0f9960;
   --color-orange1: #d9822b;
+  --color-orange2: #ffb366;
 }

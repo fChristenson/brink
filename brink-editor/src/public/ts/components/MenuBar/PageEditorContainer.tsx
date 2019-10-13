@@ -2,12 +2,15 @@ import { compose } from "redux";
 import { connect } from "react-redux";
 import { MenuBar as Component } from "./component";
 import { Dispatch } from "react";
-import { OpenCodeEditor } from "../CodeEditor/actions";
-import { IAction } from "../../store/action";
-import { OpenComponentEditor } from "../ComponentEditor/actions";
+import {
+  OpenCodeEditor,
+  IAction as ICodeEditorAction
+} from "../CodeEditor/actions";
+import {
+  OpenComponentEditor,
+  IAction as IComponentEditorAction
+} from "../ComponentEditor/actions";
 import { IState } from "../../store/state";
-import { SetNodeToPlace } from "../PageBuilder/actions";
-import { highlightBlocks } from "../PageBuilder/components/Block/utils";
 
 export interface IProps {
   id: string;
@@ -21,17 +24,14 @@ const mapStateToProps = (state: IState, { id }: IProps) => {
     //title: `Brink - ${rootNode.title}`,
     title: id,
     codeEditorOpen: state.codeEditor.open,
-    nodeToPlace: state.pageBuilder.nodeToPlace,
     componentEditorOpen: state.componentEditor.open
   };
 };
 
-const mapDispatchToProps = (dispatch: Dispatch<IAction>) => {
+const mapDispatchToProps = (
+  dispatch: Dispatch<ICodeEditorAction | IComponentEditorAction>
+) => {
   return {
-    startPlaceNode: (nodeToPlace: string) => {
-      highlightBlocks(true);
-      dispatch(SetNodeToPlace(nodeToPlace));
-    },
     openCodeEditor: (open: boolean) => {
       dispatch(OpenCodeEditor(open));
     },
