@@ -1,9 +1,9 @@
 export interface ICodeEditorState {
-  code: string;
+  xmlCode: string;
   open: boolean;
 }
 
 export const initState: ICodeEditorState = {
-  code: "</>",
+  xmlCode: "<Page><CenterContainer>Hello world!</CenterContainer></Page>",
   open: false
 };

@@ -5,12 +5,14 @@ import { config } from "./config";
 
 interface IProps {
   open: boolean;
+  xmlCode: string;
   onClose(): void;
 }
 
 export const CodeEditor: React.FunctionComponent<IProps> = ({
   open,
-  onClose
+  onClose,
+  xmlCode
 }) => {
   return (
     <Drawer
@@ -23,14 +25,7 @@ export const CodeEditor: React.FunctionComponent<IProps> = ({
       onClose={onClose}
       className="bp3-dark"
     >
-      <Highlight language="xml">
-        {[
-          "<Page>",
-          '<Headline3 margin="12px">Test</Headline3>',
-          "<Body2>Test</Body2>",
-          "</Page>"
-        ].join("\n")}
-      </Highlight>
+      <Highlight language="xml">{xmlCode}</Highlight>
     </Drawer>
   );
 };
