@@ -10,6 +10,12 @@ export const reducer = (
     case CodeEditorEvent.OPEN:
       return { ...state, open: action.payload };
 
+    case CodeEditorEvent.SET_NODE_TREE:
+      return { ...state, nodeTree: action.payload };
+
+    case CodeEditorEvent.SET_CODE:
+      return { ...state, xmlCode: action.payload };
+
     default:
       return state;
   }

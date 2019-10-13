@@ -2,16 +2,22 @@ import React from "react";
 import Highlight from "react-highlight.js";
 import { Drawer } from "@blueprintjs/core";
 import { config } from "./config";
+import AceEditor from "react-ace";
+
+import "brace/mode/xml";
+import "brace/theme/monokai";
 
 interface IProps {
   open: boolean;
   xmlCode: string;
+  onChange(code: string): void;
   onClose(): void;
 }
 
 export const CodeEditor: React.FunctionComponent<IProps> = ({
   open,
   onClose,
+  onChange,
   xmlCode
 }) => {
   return (
@@ -25,7 +31,14 @@ export const CodeEditor: React.FunctionComponent<IProps> = ({
       onClose={onClose}
       className="bp3-dark"
     >
-      <Highlight language="xml">{xmlCode}</Highlight>
+      <AceEditor
+        editorProps={{ $blockScrolling: Infinity }}
+        width="100%"
+        onChange={code => onChange(code)}
+        mode="xml"
+        theme="monokai"
+        value={xmlCode}
+      />
     </Drawer>
   );
 };
