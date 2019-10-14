@@ -1,7 +1,7 @@
 import React from "react";
 import * as components from "../../components";
 import { Provider, IProivderProps } from "../../store";
-import { isValidTag, getValidTagNames } from "../validation/validateTag";
+import { isValidTag } from "../validation/validateTag";
 
 interface IPageBuilderProps {
   xml: any;
@@ -42,13 +42,7 @@ const parseXml = (children: any[]): React.ReactNode => {
 const validateChildren = (children: any[]) => {
   for (const child of children) {
     if (child.type === "element" && !isValidTag(child.name)) {
-      throw new Error(
-        `${
-          child.name
-        } is not a valid tag, please use one of the following tags:\n${getValidTagNames().join(
-          ",\n"
-        )}`
-      );
+      throw new Error(`${child.name} is not a valid tag`);
     }
   }
 };
