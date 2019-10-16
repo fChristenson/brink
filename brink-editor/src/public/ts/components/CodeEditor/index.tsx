@@ -4,7 +4,7 @@ import { CodeEditor as Component } from "./component";
 import { IState } from "../../store/state";
 import { Dispatch } from "react";
 import { OpenCodeEditor, IAction, SetCode, SetNodeTree } from "./actions";
-import { xml2json } from "xml-js";
+import { parseXml, isValidXml } from "./utils";
 
 const mapStateToProps = (state: IState) => {
   return {
@@ -17,13 +17,9 @@ const mapDispatchProps = (dispatch: Dispatch<IAction>) => {
   return {
     onChange: (code: string) => {
       try {
-        const xmlStr = xml2json(code);
-        const xml = JSON.parse(xmlStr);
-        dispatch(SetNodeTree(xml));
-      } catch (e) {
-        //TODO: syntax error?
-        console.log(e.message);
-      }
+        const xml = parseXml(code);
+        if (isValidXml(xml)) dispatch(SetNodeTree(xml));
+      } catch (_) {}
       dispatch(SetCode(code));
     },
     onClose: () => {

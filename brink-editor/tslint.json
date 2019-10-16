@@ -8,7 +8,8 @@
     "trailing-comma": false,
     "arrow-parens": false,
     "curly": false,
-    "ordered-imports": false
+    "ordered-imports": false,
+    "no-empty": false
   },
   "rulesDirectory": []
 }

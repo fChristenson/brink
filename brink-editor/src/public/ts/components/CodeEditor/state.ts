@@ -1,5 +1,5 @@
 import xmlformat from "xml-formatter";
-import { xml2json } from "xml-js";
+import { parseXml } from "./utils";
 
 export interface ICodeEditorState {
   xmlCode: string;
@@ -8,8 +8,7 @@ export interface ICodeEditorState {
 }
 
 const initXml = "<Page><CenterContainer>Hello world!</CenterContainer></Page>";
-const xmlStr = xml2json(initXml);
-const xml = JSON.parse(xmlStr);
+const xml = parseXml(initXml);
 
 export const initState: ICodeEditorState = {
   xmlCode: xmlformat(initXml),

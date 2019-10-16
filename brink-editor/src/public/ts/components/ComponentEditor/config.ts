@@ -1,9 +1,9 @@
 interface IConfig {
   title: string;
-  icon: "settings";
+  icon: "document";
 }
 
 export const config: IConfig = {
-  title: "Component settings",
-  icon: "settings"
+  title: "Documentation",
+  icon: "document"
 };

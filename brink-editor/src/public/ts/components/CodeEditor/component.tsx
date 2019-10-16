@@ -1,5 +1,4 @@
 import React from "react";
-import Highlight from "react-highlight.js";
 import { Drawer } from "@blueprintjs/core";
 import { config } from "./config";
 import AceEditor from "react-ace";
