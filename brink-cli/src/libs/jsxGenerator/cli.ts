@@ -1,6 +1,6 @@
-import commander from "commander";
+import commander, { Command } from "commander";
 
-export const cli = commander
+export const cli: Command = commander
   .version("0.1.0")
   .description("Convert Brink xml file to Brink React code")
   .usage("<Brink xml file> [options]")

@@ -12,6 +12,10 @@ export const run = (name: string, filePath: string) => {
 
   if (cli.json) return xmlJsonString;
 
+  return getTemplate(name, xmlJsonString);
+};
+
+export const getTemplate = (name: string, xmlJsonString: string) => {
   const xmlJson = JSON.parse(xmlJsonString);
   const componentImports = getComponentImports(xmlJson.elements as any[]);
   const reactTreeString = getComponentBody(xmlJson.elements as any[]);
