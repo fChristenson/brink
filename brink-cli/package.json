@@ -1,11 +1,11 @@
 {
   "name": "brink-cli",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Brink-core cli for parsing Brink files",
   "bin": {
     "brink": "./index.js"
   },
-  "index": "./dist/libs/jsxGenerator/compile.js",
+  "main": "./dist/libs/jsxGenerator/compile.js",
   "scripts": {
     "start": "npx tsc",
     "prestart": "rm -rf ./dist",
