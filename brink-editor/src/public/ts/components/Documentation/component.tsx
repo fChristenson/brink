@@ -7,7 +7,7 @@ interface IProps {
   onClose(): void;
 }
 
-export const ComponentEditor: React.FunctionComponent<IProps> = ({
+export const Documentation: React.FunctionComponent<IProps> = ({
   open,
   onClose
 }) => {

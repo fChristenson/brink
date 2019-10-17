@@ -5,7 +5,7 @@
 @import "../ts/components/Canvas/components/RootNode/styles.css";
 @import "../ts/components/Canvas/styles.css";
 @import "../ts/components/CodeEditor/styles.css";
-@import "../ts/components/ComponentEditor/styles.css";
+@import "../ts/components/Documentation/styles.css";
 @import "../ts/components/Content/styles.css";
 @import "../ts/components/Canvas/components/NameConnectionDialog/styles.css";
 @import "../ts/components/PageBuilder/components/PageNode/styles.css";

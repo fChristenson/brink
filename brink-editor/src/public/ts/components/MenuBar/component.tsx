@@ -1,14 +1,16 @@
 import React from "react";
 import { Navbar, Button, Alignment } from "@blueprintjs/core";
 import { config as codeConfig } from "../CodeEditor/config";
-import { config as componentConfig } from "../ComponentEditor/config";
+import { config as documentationConfig } from "../Documentation/config";
+import { exportConfig } from "../../../libs/export/exportPageConfig";
 
 interface IProps {
   title: string;
   codeEditorOpen?: boolean;
-  componentEditorOpen?: boolean;
+  documentationOpen?: boolean;
+  onExportPage?(): void;
   openCodeEditor?(open: boolean): void;
-  openComponentEditor?(open: boolean): void;
+  openDocumentation?(open: boolean): void;
   addPage?(): void;
   exportFlow?(): void;
 }
@@ -16,9 +18,10 @@ interface IProps {
 export const MenuBar: React.FunctionComponent<IProps> = ({
   title,
   openCodeEditor,
-  openComponentEditor,
+  openDocumentation,
   codeEditorOpen,
-  componentEditorOpen,
+  documentationOpen,
+  onExportPage,
   addPage,
   exportFlow
 }) => {
@@ -51,12 +54,20 @@ export const MenuBar: React.FunctionComponent<IProps> = ({
             onClick={() => openCodeEditor(!codeEditorOpen)}
           />
         )}
-        {openComponentEditor && (
+        {openDocumentation && (
           <Button
             className="bp3-minimal"
-            icon={componentConfig.icon}
-            text={componentConfig.title}
-            onClick={() => openComponentEditor(!componentEditorOpen)}
+            icon={documentationConfig.icon}
+            text={documentationConfig.title}
+            onClick={() => openDocumentation(!documentationOpen)}
+          />
+        )}
+        {onExportPage && (
+          <Button
+            className="bp3-minimal"
+            icon={exportConfig.icon}
+            text={exportConfig.text}
+            onClick={onExportPage}
           />
         )}
       </Navbar.Group>

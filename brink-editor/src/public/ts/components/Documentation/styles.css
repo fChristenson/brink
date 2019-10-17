@@ -1,8 +1,8 @@
-.component_editor {
+.documentation {
   flex: 0 0 300px;
   background: var(--color-blue1);
 }
 
-.component_editor--hidden {
+.documentation--hidden {
   display: none;
 }

@@ -3,7 +3,7 @@ import { PageEditorMenuBar } from "../MenuBar/PageEditorContainer";
 import { Content } from "../Content";
 import { Body } from "../Body";
 import { CodeEditor } from "../CodeEditor";
-import { ComponentEditor } from "../ComponentEditor";
+import { Documentation } from "../Documentation";
 import { PageBuilder } from "brink-core";
 
 interface IProps {
@@ -18,7 +18,7 @@ export const PageEditor: React.FunctionComponent<IProps> = ({ id, xml }) => {
       <Content>
         <CodeEditor />
         {xml && <PageBuilder xml={xml} props={{}} />}
-        <ComponentEditor />
+        <Documentation />
       </Content>
     </Body>
   );

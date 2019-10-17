@@ -1,25 +1,25 @@
 import { compose } from "redux";
 import { connect } from "react-redux";
-import { ComponentEditor as Component } from "./component";
+import { Documentation as Component } from "./component";
 import { IState } from "../../store/state";
-import { OpenComponentEditor, IAction } from "./actions";
+import { OpenDocumentation, IAction } from "./actions";
 import { Dispatch } from "react";
 
 const mapStateToProps = (state: IState) => {
   return {
-    open: state.componentEditor.open
+    open: state.documentation.open
   };
 };
 
 const mapDispatchProps = (dispatch: Dispatch<IAction>) => {
   return {
     onClose: () => {
-      return dispatch(OpenComponentEditor(false));
+      return dispatch(OpenDocumentation(false));
     }
   };
 };
 
-export const ComponentEditor = compose(
+export const Documentation = compose(
   connect(
     mapStateToProps,
     mapDispatchProps

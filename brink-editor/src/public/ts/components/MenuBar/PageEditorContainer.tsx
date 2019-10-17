@@ -7,9 +7,9 @@ import {
   IAction as ICodeEditorAction
 } from "../CodeEditor/actions";
 import {
-  OpenComponentEditor,
-  IAction as IComponentEditorAction
-} from "../ComponentEditor/actions";
+  OpenDocumentation,
+  IAction as IDocumentationAction
+} from "../Documentation/actions";
 import { IState } from "../../store/state";
 
 export interface IProps {
@@ -24,19 +24,22 @@ const mapStateToProps = (state: IState, { id }: IProps) => {
     //title: `Brink - ${rootNode.title}`,
     title: id,
     codeEditorOpen: state.codeEditor.open,
-    componentEditorOpen: state.componentEditor.open
+    documentationOpen: state.documentation.open
   };
 };
 
 const mapDispatchToProps = (
-  dispatch: Dispatch<ICodeEditorAction | IComponentEditorAction>
+  dispatch: Dispatch<ICodeEditorAction | IDocumentationAction>
 ) => {
   return {
     openCodeEditor: (open: boolean) => {
       dispatch(OpenCodeEditor(open));
     },
-    openComponentEditor: (open: boolean) => {
-      dispatch(OpenComponentEditor(open));
+    openDocumentation: (open: boolean) => {
+      dispatch(OpenDocumentation(open));
+    },
+    onExportPage: () => {
+      alert(1);
     }
   };
 };

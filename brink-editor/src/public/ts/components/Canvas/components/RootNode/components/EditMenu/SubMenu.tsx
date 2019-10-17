@@ -3,6 +3,7 @@ import { Menu, MenuItem, MenuDivider, Text } from "@blueprintjs/core";
 import { IRootNode } from "../../RootNode";
 import { hasOutgoingConnection } from "../../utils";
 import { IConnection } from "../../Connection";
+import { exportConfig } from "../../../../../../../libs/export/exportPageConfig";
 
 interface IProps {
   rootNode: IRootNode;
@@ -36,8 +37,8 @@ export const SubMenu: React.FunctionComponent<IProps> = ({
         onClick={() => onConnect(rootNode)}
       />
       <MenuItem
-        text="Export page"
-        icon="export"
+        text={exportConfig.text}
+        icon={exportConfig.icon}
         onClick={() => onExport(rootNode)}
       />
       <MenuDivider />
