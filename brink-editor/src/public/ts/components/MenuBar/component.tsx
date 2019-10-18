@@ -6,9 +6,10 @@ import { exportConfig } from "../../../libs/export/exportPageConfig";
 
 interface IProps {
   title: string;
+  xmlCode?: string;
   codeEditorOpen?: boolean;
   documentationOpen?: boolean;
-  onExportPage?(): void;
+  onExportPage?(name: string, xml?: string): void;
   openCodeEditor?(open: boolean): void;
   openDocumentation?(open: boolean): void;
   addPage?(): void;
@@ -17,6 +18,7 @@ interface IProps {
 
 export const MenuBar: React.FunctionComponent<IProps> = ({
   title,
+  xmlCode,
   openCodeEditor,
   openDocumentation,
   codeEditorOpen,
@@ -67,7 +69,7 @@ export const MenuBar: React.FunctionComponent<IProps> = ({
             className="bp3-minimal"
             icon={exportConfig.icon}
             text={exportConfig.text}
-            onClick={onExportPage}
+            onClick={() => onExportPage(title, xmlCode)}
           />
         )}
       </Navbar.Group>

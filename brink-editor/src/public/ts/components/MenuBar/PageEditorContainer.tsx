@@ -11,6 +11,7 @@ import {
   IAction as IDocumentationAction
 } from "../Documentation/actions";
 import { IState } from "../../store/state";
+import { getCompiledExportPage } from "../../../libs/export/api";
 
 export interface IProps {
   id: string;
@@ -24,7 +25,8 @@ const mapStateToProps = (state: IState, { id }: IProps) => {
     //title: `Brink - ${rootNode.title}`,
     title: id,
     codeEditorOpen: state.codeEditor.open,
-    documentationOpen: state.documentation.open
+    documentationOpen: state.documentation.open,
+    xmlCode: state.codeEditor.xmlCode
   };
 };
 
@@ -38,8 +40,9 @@ const mapDispatchToProps = (
     openDocumentation: (open: boolean) => {
       dispatch(OpenDocumentation(open));
     },
-    onExportPage: () => {
-      alert(1);
+    onExportPage: async (name: string, xml?: string) => {
+      if (!xml) return;
+      await getCompiledExportPage(name, xml);
     }
   };
 };
