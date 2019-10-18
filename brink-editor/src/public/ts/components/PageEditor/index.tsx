@@ -3,12 +3,16 @@ import { connect } from "react-redux";
 import { PageEditor as Component } from "./component";
 import { IState } from "../../store/state";
 import { RouteComponentProps } from "react-router";
+import { parseXml, findRootNode } from "../CodeEditor/utils";
 
 const mapStateToProps = (state: IState, { match }: RouteComponentProps) => {
+  // @ts-ignore
+  const rootNode = findRootNode(state.canvas.rootNodes, match.params.id);
+  const xml = parseXml(rootNode.xmlCode);
   return {
     // @ts-ignore
     id: match.params.id,
-    xml: state.codeEditor.nodeTree
+    xml
   };
 };
 

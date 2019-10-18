@@ -5,16 +5,19 @@ import AceEditor from "react-ace";
 
 import "brace/mode/xml";
 import "brace/theme/monokai";
+import { IRootNode } from "../Canvas/components/RootNode/RootNode";
 
 interface IProps {
+  rootNode: IRootNode;
   open: boolean;
   xmlCode: string;
-  onChange(code: string): void;
+  onChange(code: string, rootNode: IRootNode): void;
   onClose(): void;
 }
 
 export const CodeEditor: React.FunctionComponent<IProps> = ({
   open,
+  rootNode,
   onClose,
   onChange,
   xmlCode
@@ -33,7 +36,7 @@ export const CodeEditor: React.FunctionComponent<IProps> = ({
       <AceEditor
         editorProps={{ $blockScrolling: Infinity }}
         width="100%"
-        onChange={code => onChange(code)}
+        onChange={code => onChange(code, rootNode)}
         mode="xml"
         theme="monokai"
         value={xmlCode}

@@ -5,6 +5,7 @@ import {
   hasOutgoingConnection
 } from "./components/RootNode/utils";
 import { IAction } from "./actions";
+import { IRootNode } from "./components/RootNode/RootNode";
 
 export const reducer = (
   state: ICanvasState = initState,
@@ -66,33 +67,44 @@ export const reducer = (
         )
       };
 
-    case CanvasEvents.SET_ROOT_NODE_TITLE:
+    case CanvasEvents.SET_ROOT_NODE_TITLE: {
+      const { id, title } = action.payload;
+      const mapFunc = mapNode(id, n => ({ ...n, title }));
+      const rootNodes = state.rootNodes.map(mapFunc);
       return {
         ...state,
-        rootNodes: state.rootNodes.map(n => {
-          if (n.id === action.payload.id) {
-            const { title } = action.payload;
-            return { ...n, title };
-          }
-
-          return n;
-        })
+        rootNodes
       };
+    }
 
-    case CanvasEvents.MOVE_ROOT_NODE:
+    case CanvasEvents.MOVE_ROOT_NODE: {
+      const { x, y, id } = action.payload;
+      const mapFunc = mapNode(id, n => ({ ...n, x, y }));
+      const rootNodes = state.rootNodes.map(mapFunc);
       return {
         ...state,
-        rootNodes: state.rootNodes.map(n => {
-          if (n.id === action.payload.id) {
-            const { x, y } = action.payload;
-            return { ...n, x, y };
-          }
-
-          return n;
-        })
+        rootNodes
       };
+    }
+
+    case CanvasEvents.SET_ROOT_NODE_CODE: {
+      const id = action.payload.rootNode.id;
+      const mapFunc = mapNode(id, n => ({
+        ...n,
+        xmlCode: action.payload.code
+      }));
+      const rootNodes = state.rootNodes.map(mapFunc);
+      return { ...state, rootNodes };
+    }
 
     default:
       return state;
   }
+};
+
+const mapNode = (id: string, fn: (n: IRootNode) => IRootNode) => (
+  n: IRootNode
+) => {
+  if (n.id !== id) return n;
+  return fn(n);
 };

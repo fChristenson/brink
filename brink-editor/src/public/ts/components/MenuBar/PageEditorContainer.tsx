@@ -11,22 +11,21 @@ import {
   IAction as IDocumentationAction
 } from "../Documentation/actions";
 import { IState } from "../../store/state";
-import { getCompiledExportPage } from "../../../libs/export/api";
+import { downloadTsxCode } from "../../../libs/export/api";
+import { findRootNode } from "../CodeEditor/utils";
 
 export interface IProps {
   id: string;
 }
 
 const mapStateToProps = (state: IState, { id }: IProps) => {
-  //const rootNode = state.canvas.rootNodes.find(n => n.id === id);
-  //if (!rootNode) throw new Error(`Could not find ${id}`);
+  const rootNode = findRootNode(state.canvas.rootNodes, id);
 
   return {
-    //title: `Brink - ${rootNode.title}`,
-    title: id,
+    title: `Brink - ${rootNode.title}`,
     codeEditorOpen: state.codeEditor.open,
     documentationOpen: state.documentation.open,
-    xmlCode: state.codeEditor.xmlCode
+    xmlCode: state.codeEditor.xmlCode || rootNode.xmlCode
   };
 };
 
@@ -42,7 +41,7 @@ const mapDispatchToProps = (
     },
     onExportPage: async (name: string, xml?: string) => {
       if (!xml) return;
-      await getCompiledExportPage(name, xml);
+      await downloadTsxCode(name, xml);
     }
   };
 };

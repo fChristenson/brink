@@ -50,6 +50,16 @@ export const AddTag = makeAction<CanvasEvents.ADD_TAG, string>(
   CanvasEvents.ADD_TAG
 );
 
+interface ISetRootNodeCodeProps {
+  rootNode: IRootNode;
+  code: string;
+}
+
+export const SetRootNodeCode = makeAction<
+  CanvasEvents.SET_ROOT_NODE_CODE,
+  ISetRootNodeCodeProps
+>(CanvasEvents.SET_ROOT_NODE_CODE);
+
 const actions = {
   AddRootNode,
   RemoveRootNode,
@@ -60,7 +70,8 @@ const actions = {
   CreateConnection,
   DeleteConnection,
   DeleteAllConnections,
-  AddTag
+  AddTag,
+  SetRootNodeCode
 };
 
 export type IAction = IActionUnion<typeof actions>;

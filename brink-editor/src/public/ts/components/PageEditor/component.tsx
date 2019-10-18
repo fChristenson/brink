@@ -16,7 +16,7 @@ export const PageEditor: React.FunctionComponent<IProps> = ({ id, xml }) => {
     <Body>
       <PageEditorMenuBar id={id} />
       <Content>
-        <CodeEditor />
+        <CodeEditor id={id} />
         {xml && <PageBuilder xml={xml} props={{}} />}
         <Documentation />
       </Content>
