@@ -13,6 +13,7 @@ import {
 } from "../../../../actions";
 import { withRouter, RouteComponentProps } from "react-router";
 import { IConnection } from "../../Connection";
+import { downloadTsxCode } from "../../../../../../../libs/export/api";
 
 interface IProps extends RouteComponentProps {
   rootNode: IRootNode;
@@ -34,7 +35,9 @@ const mapDispatchToProps = (
   return {
     onEdit: (rootNode: IRootNode) => history.push(`/page/${rootNode.id}`),
     onConnect: (rootNode: IRootNode) => dispatch(SelectFromRootNode(rootNode)),
-    onExport: (rootNode: IRootNode) => alert(rootNode),
+    onExport: async (rootNode: IRootNode) => {
+      await downloadTsxCode(rootNode.title, rootNode.xmlCode);
+    },
     onDelete: (rootNode: IRootNode) => {
       dispatch(DeleteAllConnections(rootNode));
       dispatch(RemoveRootNode(rootNode));

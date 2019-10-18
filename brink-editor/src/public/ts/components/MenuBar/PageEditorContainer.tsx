@@ -23,6 +23,7 @@ const mapStateToProps = (state: IState, { id }: IProps) => {
 
   return {
     title: `Brink - ${rootNode.title}`,
+    rootNode,
     codeEditorOpen: state.codeEditor.open,
     documentationOpen: state.documentation.open,
     xmlCode: state.codeEditor.xmlCode || rootNode.xmlCode

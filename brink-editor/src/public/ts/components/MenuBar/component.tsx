@@ -3,9 +3,11 @@ import { Navbar, Button, Alignment } from "@blueprintjs/core";
 import { config as codeConfig } from "../CodeEditor/config";
 import { config as documentationConfig } from "../Documentation/config";
 import { exportConfig } from "../../../libs/export/exportPageConfig";
+import { IRootNode } from "../Canvas/components/RootNode/RootNode";
 
 interface IProps {
   title: string;
+  rootNode?: IRootNode;
   xmlCode?: string;
   codeEditorOpen?: boolean;
   documentationOpen?: boolean;
@@ -18,6 +20,7 @@ interface IProps {
 
 export const MenuBar: React.FunctionComponent<IProps> = ({
   title,
+  rootNode,
   xmlCode,
   openCodeEditor,
   openDocumentation,
@@ -64,12 +67,12 @@ export const MenuBar: React.FunctionComponent<IProps> = ({
             onClick={() => openDocumentation(!documentationOpen)}
           />
         )}
-        {onExportPage && (
+        {onExportPage && rootNode && (
           <Button
             className="bp3-minimal"
             icon={exportConfig.icon}
             text={exportConfig.text}
-            onClick={() => onExportPage(title, xmlCode)}
+            onClick={() => onExportPage(rootNode.title, xmlCode)}
           />
         )}
       </Navbar.Group>
