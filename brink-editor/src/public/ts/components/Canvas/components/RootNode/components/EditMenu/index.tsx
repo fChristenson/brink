@@ -15,9 +15,8 @@ import { withRouter, RouteComponentProps } from "react-router";
 import { IConnection } from "../../Connection";
 import { downloadTsxCode } from "../../../../../../../libs/export/api";
 
-interface IProps extends RouteComponentProps {
+interface IProps {
   rootNode: IRootNode;
-  children: any;
 }
 
 const mapStateToProps = (state: IState, { rootNode }: IProps) => {
@@ -30,7 +29,7 @@ const mapStateToProps = (state: IState, { rootNode }: IProps) => {
 
 const mapDispatchToProps = (
   dispatch: Dispatch<IAction>,
-  { history }: IProps
+  { history }: IProps & RouteComponentProps
 ) => {
   return {
     onEdit: (rootNode: IRootNode) => history.push(`/page/${rootNode.id}`),
