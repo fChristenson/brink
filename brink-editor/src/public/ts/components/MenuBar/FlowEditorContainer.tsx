@@ -31,7 +31,7 @@ const mapDispatchToProps = (
   };
 };
 
-export const FlowEditorMenuBar = compose(
+export const FlowEditorMenuBar = compose<any>(
   withRouter,
   connect(
     mapStateToProps,

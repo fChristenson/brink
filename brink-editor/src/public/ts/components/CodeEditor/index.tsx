@@ -22,6 +22,7 @@ const mapStateToProps = (state: IState, { id }: IProps) => {
 
   return {
     rootNode,
+    connections: state.canvas.connections,
     open: state.codeEditor.open,
     xmlCode: state.codeEditor.xmlCode || rootNode.xmlCode
   };

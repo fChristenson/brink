@@ -8,12 +8,12 @@ export interface IConnection {
 export const Connection = (
   from: string,
   to: string,
-  name: string,
+  name?: string,
   id?: string
 ): IConnection => {
   return {
     id: id || Math.random().toString(),
-    name,
+    name: name || "Name missing",
     from,
     to
   };

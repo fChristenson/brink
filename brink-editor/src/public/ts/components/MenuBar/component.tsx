@@ -13,7 +13,7 @@ interface IProps {
   codeEditorOpen?: boolean;
   documentationOpen?: boolean;
   onExportPage?(name: string, xml?: string): void;
-  openCodeEditor?(open: boolean): void;
+  openCodeEditor?(open: boolean, rootNode: IRootNode): void;
   openDocumentation?(open: boolean): void;
   addPage?(): void;
   exportFlow?(rootNodes: IRootNode[]): void;
@@ -65,12 +65,12 @@ export const MenuBar: React.FunctionComponent<IProps> = ({
             onClick={() => exportFlow(rootNodes)}
           />
         )}
-        {openCodeEditor && (
+        {openCodeEditor && rootNode && (
           <Button
             className="bp3-minimal"
             icon={codeConfig.icon}
             text={codeConfig.title}
-            onClick={() => openCodeEditor(!codeEditorOpen)}
+            onClick={() => openCodeEditor(!codeEditorOpen, rootNode)}
           />
         )}
         {openDocumentation && (

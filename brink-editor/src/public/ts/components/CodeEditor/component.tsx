@@ -6,18 +6,25 @@ import { IRootNode } from "../Canvas/components/RootNode/RootNode";
 import "brace/ext/language_tools";
 import "brace/mode/xml";
 import "brace/theme/monokai";
-import { componentNameCompleter, propertyNameCompleter } from "./completers";
+import {
+  componentNameCompleter,
+  propertyNameCompleter,
+  makeConnectionCompleter
+} from "./completers";
+import { IConnection } from "../Canvas/components/RootNode/Connection";
 
 interface IProps {
   rootNode: IRootNode;
   open: boolean;
   xmlCode: string;
+  connections: IConnection[];
   onChange(code: string, rootNode: IRootNode): void;
   onClose(): void;
 }
 
 export const CodeEditor: React.FunctionComponent<IProps> = ({
   open,
+  connections,
   rootNode,
   onClose,
   onChange,
@@ -38,7 +45,8 @@ export const CodeEditor: React.FunctionComponent<IProps> = ({
         // @ts-ignore, type seems to be wrong
         enableLiveAutocompletion={[
           componentNameCompleter,
-          propertyNameCompleter
+          propertyNameCompleter,
+          makeConnectionCompleter(connections)
         ]}
         tabSize={2}
         editorProps={{ $blockScrolling: Infinity }}

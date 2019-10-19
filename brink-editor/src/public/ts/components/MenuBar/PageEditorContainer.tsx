@@ -4,7 +4,8 @@ import { MenuBar as Component } from "./component";
 import { Dispatch } from "react";
 import {
   OpenCodeEditor,
-  IAction as ICodeEditorAction
+  IAction as ICodeEditorAction,
+  SetCode
 } from "../CodeEditor/actions";
 import {
   OpenDocumentation,
@@ -13,6 +14,7 @@ import {
 import { IState } from "../../store/state";
 import { downloadTsxCode } from "../../../libs/export/api";
 import { findRootNode } from "../CodeEditor/utils";
+import { IRootNode } from "../Canvas/components/RootNode/RootNode";
 
 export interface IProps {
   id: string;
@@ -34,8 +36,9 @@ const mapDispatchToProps = (
   dispatch: Dispatch<ICodeEditorAction | IDocumentationAction>
 ) => {
   return {
-    openCodeEditor: (open: boolean) => {
+    openCodeEditor: (open: boolean, rootNode: IRootNode) => {
       dispatch(OpenCodeEditor(open));
+      if (open) dispatch(SetCode(rootNode.xmlCode));
     },
     openDocumentation: (open: boolean) => {
       dispatch(OpenDocumentation(open));
