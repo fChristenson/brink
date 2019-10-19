@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { PageEditor as Component } from "./component";
 import { IState } from "../../store/state";
 import { RouteComponentProps } from "react-router";
-import { parseXml, findRootNode } from "../CodeEditor/utils";
+import { parseXml, findRootNode, isValidXml } from "../CodeEditor/utils";
 
 const mapStateToProps = (state: IState, { match }: RouteComponentProps) => {
   // @ts-ignore
@@ -16,7 +16,7 @@ const mapStateToProps = (state: IState, { match }: RouteComponentProps) => {
   return {
     // @ts-ignore
     id: match.params.id,
-    xml
+    xml: isValidXml(xml) && xml
   };
 };
 
