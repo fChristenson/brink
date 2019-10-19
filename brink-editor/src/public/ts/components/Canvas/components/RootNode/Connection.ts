@@ -1,6 +1,6 @@
 export interface IConnection {
   id: string;
-  name?: string;
+  name: string;
   from: string;
   to: string;
 }
@@ -8,7 +8,7 @@ export interface IConnection {
 export const Connection = (
   from: string,
   to: string,
-  name?: string,
+  name: string,
   id?: string
 ): IConnection => {
   return {

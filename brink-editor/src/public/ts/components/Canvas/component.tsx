@@ -45,7 +45,7 @@ export const Canvas: React.FunctionComponent<IProps> = ({
                     relations={[
                       RelationConfig(
                         getToId(to.id),
-                        c.name || "",
+                        c.name,
                         getAnchorPosition(from.x, to.x)
                       )
                     ]}

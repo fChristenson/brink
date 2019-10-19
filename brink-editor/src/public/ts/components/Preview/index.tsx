@@ -4,13 +4,25 @@ import { Preview as Component } from "./component";
 import { IState } from "../../store/state";
 import { RouteComponentProps } from "react-router";
 import { buildRootNode } from "../../../libs/rootNodes";
+import { previewRoute } from "../../../libs/api/routes";
 
-const mapStateToProps = (state: IState, { match }: RouteComponentProps) => {
+const mapStateToProps = (
+  state: IState,
+  { match, history }: RouteComponentProps
+) => {
   // @ts-ignore
-  const xml = buildRootNode(state.canvas.rootNodes, match.params.id);
+  const { id } = match.params;
+  const xml = buildRootNode(state.canvas.rootNodes, id);
+  const onClicks = state.canvas.connections.reduce((acc: any, c) => {
+    acc[c.name] = () => history.push(previewRoute.route(c.to));
+    return acc;
+  }, {});
 
   return {
-    xml
+    xml,
+    props: {
+      onClicks
+    }
   };
 };
 
