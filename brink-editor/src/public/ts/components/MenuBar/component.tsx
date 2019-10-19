@@ -17,6 +17,7 @@ interface IProps {
   openDocumentation?(open: boolean): void;
   addPage?(): void;
   exportFlow?(rootNodes: IRootNode[]): void;
+  previewFlow?(rootNodes: IRootNode[]): void;
 }
 
 export const MenuBar: React.FunctionComponent<IProps> = ({
@@ -26,6 +27,7 @@ export const MenuBar: React.FunctionComponent<IProps> = ({
   xmlCode,
   openCodeEditor,
   openDocumentation,
+  previewFlow,
   codeEditorOpen,
   documentationOpen,
   onExportPage,
@@ -43,6 +45,15 @@ export const MenuBar: React.FunctionComponent<IProps> = ({
             icon="document"
             text="New page"
             onClick={addPage}
+          />
+        )}
+        {previewFlow && rootNodes && (
+          <Button
+            className="bp3-minimal"
+            icon="layout"
+            text="Preview flow"
+            disabled={rootNodes.length <= 0}
+            onClick={() => previewFlow(rootNodes)}
           />
         )}
         {exportFlow && rootNodes && (
