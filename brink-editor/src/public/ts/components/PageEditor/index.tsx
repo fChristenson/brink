@@ -8,7 +8,11 @@ import { parseXml, findRootNode } from "../CodeEditor/utils";
 const mapStateToProps = (state: IState, { match }: RouteComponentProps) => {
   // @ts-ignore
   const rootNode = findRootNode(state.canvas.rootNodes, match.params.id);
-  const xml = parseXml(rootNode.xmlCode);
+  let xml;
+
+  try {
+    xml = parseXml(rootNode.xmlCode);
+  } catch (_) {}
   return {
     // @ts-ignore
     id: match.params.id,

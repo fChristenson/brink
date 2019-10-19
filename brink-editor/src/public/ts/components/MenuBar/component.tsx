@@ -50,6 +50,7 @@ export const MenuBar: React.FunctionComponent<IProps> = ({
             className="bp3-minimal"
             icon="export"
             text="Export flow"
+            disabled={rootNodes.length <= 0}
             onClick={() => exportFlow(rootNodes)}
           />
         )}
