@@ -1,8 +1,12 @@
 import express from "express";
-import path from "path";
 import { compile } from "brink-cli";
-import { IExportPageRequest } from "./libs/types/exportPage";
-import { exportPage } from "./libs/routes";
+import path from "path";
+import {
+  IExportPageRequest,
+  IExportFlowRequest
+} from "./libs/types/exportPage";
+import { exportPage, exportFlow } from "./libs/routes";
+import archiver from "archiver";
 
 export const app = express();
 
@@ -14,6 +18,21 @@ app.post(exportPage, (req, res) => {
   const out = compile(name, xml);
   res.type("tsx");
   res.send(out);
+});
+
+app.post(exportFlow, (req, res) => {
+  const { rootNodes } = req.body as IExportFlowRequest;
+  const format = "zip";
+  res.type(format);
+  const archive = archiver(format);
+
+  rootNodes.forEach(n => {
+    const code = compile(n.title, n.xmlCode);
+    archive.append(code, { name: `${n.title}.tsx` });
+  });
+
+  archive.pipe(res);
+  archive.finalize();
 });
 
 app.get("*", (_, res) => {

@@ -1,6 +1,10 @@
-import { IExportPageRequest } from "../../../libs/types/exportPage";
-import { exportPage } from "../../../libs/routes";
+import {
+  IExportPageRequest,
+  IExportFlowRequest
+} from "../../../libs/types/exportPage";
+import { exportPage, exportFlow } from "../../../libs/routes";
 import { getRequestInit } from "../api/requestInit";
+import { IRootNode } from "../../ts/components/Canvas/components/RootNode/RootNode";
 
 export const downloadTsxCode = async (name: string, xml: string) => {
   const body: IExportPageRequest = { name, xml };
@@ -11,5 +15,16 @@ export const downloadTsxCode = async (name: string, xml: string) => {
   const link = document.createElement("a");
   link.download = `${name}.tsx`;
   link.href = window.URL.createObjectURL(blob);
+  link.click();
+};
+
+export const downloadFlow = async (name: string, rootNodes: IRootNode[]) => {
+  const body: IExportFlowRequest = { rootNodes };
+  const data = getRequestInit("POST", body);
+  const res = await fetch(exportFlow, data);
+  const buf = await res.arrayBuffer();
+  const link = document.createElement("a");
+  link.download = `${name}.zip`;
+  link.href = window.URL.createObjectURL(new Blob([buf]));
   link.click();
 };

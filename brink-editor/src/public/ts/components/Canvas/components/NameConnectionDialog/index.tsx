@@ -10,14 +10,13 @@ import {
   IAction
 } from "../../actions";
 import { capitalize } from "../RootNode/utils";
+import { findRootNode } from "../../../CodeEditor/utils";
 
 const mapStateToProps = (state: IState) => {
   const { connectionToName, rootNodes } = state.canvas;
 
   const name = connectionToName
-    ? capitalize(
-        connectionToName.getRootNodeById(connectionToName.to, rootNodes).title
-      )
+    ? capitalize(findRootNode(rootNodes, connectionToName.to).title)
     : "";
 
   return {

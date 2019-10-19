@@ -9,6 +9,7 @@ import {
   getAnchorPosition
 } from "./relations";
 import { IConnection } from "./components/RootNode/Connection";
+import { findRootNode } from "../CodeEditor/utils";
 
 interface IProps {
   rootNodes: IRootNode[];
@@ -34,8 +35,8 @@ export const Canvas: React.FunctionComponent<IProps> = ({
             {connections
               .filter(c => c.from === node.id)
               .map((c, i) => {
-                const from = c.getRootNodeById(c.from, rootNodes);
-                const to = c.getRootNodeById(c.to, rootNodes);
+                const from = findRootNode(rootNodes, c.from);
+                const to = findRootNode(rootNodes, c.to);
 
                 return (
                   <ArcherElement

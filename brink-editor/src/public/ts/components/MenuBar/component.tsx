@@ -8,6 +8,7 @@ import { IRootNode } from "../Canvas/components/RootNode/RootNode";
 interface IProps {
   title: string;
   rootNode?: IRootNode;
+  rootNodes?: IRootNode[];
   xmlCode?: string;
   codeEditorOpen?: boolean;
   documentationOpen?: boolean;
@@ -15,12 +16,13 @@ interface IProps {
   openCodeEditor?(open: boolean): void;
   openDocumentation?(open: boolean): void;
   addPage?(): void;
-  exportFlow?(): void;
+  exportFlow?(rootNodes: IRootNode[]): void;
 }
 
 export const MenuBar: React.FunctionComponent<IProps> = ({
   title,
   rootNode,
+  rootNodes,
   xmlCode,
   openCodeEditor,
   openDocumentation,
@@ -43,12 +45,12 @@ export const MenuBar: React.FunctionComponent<IProps> = ({
             onClick={addPage}
           />
         )}
-        {exportFlow && (
+        {exportFlow && rootNodes && (
           <Button
             className="bp3-minimal"
             icon="export"
             text="Export flow"
-            onClick={exportFlow}
+            onClick={() => exportFlow(rootNodes)}
           />
         )}
         {openCodeEditor && (

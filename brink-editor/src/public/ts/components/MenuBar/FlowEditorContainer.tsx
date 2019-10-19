@@ -4,18 +4,20 @@ import { MenuBar as Component } from "./component";
 import { Dispatch } from "react";
 import { IState } from "../../store/state";
 import { AddRootNode, IAction } from "../Canvas/actions";
-import { RootNode } from "../Canvas/components/RootNode/RootNode";
+import { RootNode, IRootNode } from "../Canvas/components/RootNode/RootNode";
+import { downloadFlow } from "../../../libs/export/api";
 
-const mapStateToProps = (_: IState) => {
+const mapStateToProps = (state: IState) => {
   return {
-    title: "Brink"
+    title: "Brink",
+    rootNodes: state.canvas.rootNodes
   };
 };
 
 const mapDispatchToProps = (dispatch: Dispatch<IAction>) => {
   return {
     addPage: () => dispatch(AddRootNode(RootNode(0, 0))),
-    exportFlow: () => alert("export")
+    exportFlow: (rootNodes: IRootNode[]) => downloadFlow("flow", rootNodes)
   };
 };
 
