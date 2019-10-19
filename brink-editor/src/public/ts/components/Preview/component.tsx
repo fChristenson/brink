@@ -2,7 +2,7 @@ import React from "react";
 import { PageBuilder } from "brink-core";
 
 interface IProps {
-  xml?: string;
+  xml?: any;
 }
 
 export const Preview: React.FunctionComponent<IProps> = ({ xml }) => {
