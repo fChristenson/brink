@@ -7,11 +7,11 @@ import { buildRootNode } from "../../../libs/rootNodes";
 
 const mapStateToProps = (state: IState, { match }: RouteComponentProps) => {
   // @ts-ignore
-  const xml = buildRootNode(state.canvas.rootNodes, match.params.id);
+  const { id } = match.params;
+  const xml = buildRootNode(state.canvas.rootNodes, id);
 
   return {
-    // @ts-ignore
-    id: match.params.id,
+    id,
     xml
   };
 };
