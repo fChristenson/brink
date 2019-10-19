@@ -2,10 +2,11 @@ import React from "react";
 import { Drawer } from "@blueprintjs/core";
 import { config } from "./config";
 import AceEditor from "react-ace";
-
+import { IRootNode } from "../Canvas/components/RootNode/RootNode";
+import "brace/ext/language_tools";
 import "brace/mode/xml";
 import "brace/theme/monokai";
-import { IRootNode } from "../Canvas/components/RootNode/RootNode";
+import { componentNameCompleter, propertyNameCompleter } from "./completers";
 
 interface IProps {
   rootNode: IRootNode;
@@ -34,6 +35,12 @@ export const CodeEditor: React.FunctionComponent<IProps> = ({
       className="bp3-dark"
     >
       <AceEditor
+        // @ts-ignore, type seems to be wrong
+        enableLiveAutocompletion={[
+          componentNameCompleter,
+          propertyNameCompleter
+        ]}
+        tabSize={2}
         editorProps={{ $blockScrolling: Infinity }}
         width="100%"
         onChange={code => onChange(code, rootNode)}
