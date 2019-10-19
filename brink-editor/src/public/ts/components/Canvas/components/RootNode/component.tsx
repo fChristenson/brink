@@ -69,6 +69,7 @@ export class RootNode extends React.Component<IProps> {
           </EditMenu>
           <ArcherElement id={getToId(rootNode.id)} />
           {children}
+          <img className="root_node__img" src={rootNode.image} />
         </div>
       </div>
     );

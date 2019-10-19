@@ -97,6 +97,16 @@ export const reducer = (
       return { ...state, rootNodes };
     }
 
+    case CanvasEvents.SET_ROOT_NODE_IMAGE: {
+      const id = action.payload.id;
+      const mapFunc = mapNode(id, n => ({
+        ...n,
+        image: action.payload.dataUrl
+      }));
+      const rootNodes = state.rootNodes.map(mapFunc);
+      return { ...state, rootNodes };
+    }
+
     default:
       return state;
   }

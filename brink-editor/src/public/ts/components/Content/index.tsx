@@ -1,5 +1,7 @@
 import React from "react";
 
+export const contentClassName = "content";
+
 export const Content: React.FunctionComponent = ({ children }) => {
-  return <div className="content">{children}</div>;
+  return <div className={contentClassName}>{children}</div>;
 };

@@ -16,9 +16,19 @@
 }
 
 .root_node__body {
+  position: relative;
+  overflow: hidden;
   margin-top: var(--margin-xs);
   border: 1px solid var(--color-black1);
   height: calc(100% - var(--edit-text-height) - var(--margin-xs) - 1px);
+}
+
+.root_node__img {
+  z-index: -1;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .root_node--to-outline::before,

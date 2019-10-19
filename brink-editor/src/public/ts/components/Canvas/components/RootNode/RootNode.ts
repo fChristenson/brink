@@ -6,6 +6,7 @@ export interface IRootNode {
   xmlCode: string;
   x: number;
   y: number;
+  image?: string;
 }
 
 const initXml = "<Page><CenterContainer>Hello world!</CenterContainer></Page>";
