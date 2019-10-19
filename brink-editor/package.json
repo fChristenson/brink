@@ -19,7 +19,6 @@
     "brink-core": "1.2.0",
     "dom-to-image": "2.6.0",
     "express": "4.17.1",
-    "interactjs": "1.4.0-rc.13",
     "react": "16.9.0",
     "react-ace": "7.0.4",
     "react-archer": "1.1.2",
