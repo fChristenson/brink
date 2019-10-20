@@ -33,6 +33,7 @@ const mapDispatchProps = (
 ) => {
   return {
     onChange: (code: string, rootNode: IRootNode) => {
+      if (!code) return;
       try {
         const xml = parseXml(code);
         if (isValidXml(xml)) dispatch(SetNodeTree(xml));
