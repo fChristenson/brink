@@ -9,7 +9,7 @@ import {
   IAction
 } from "../../actions";
 import { IRootNode } from "./RootNode";
-import { IState } from "../../../../store/state";
+import { IState } from "../../../../../store/state";
 import { IConnection, Connection } from "./Connection";
 
 interface IProps {

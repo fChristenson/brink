@@ -1,9 +1,9 @@
-import { IRootNode } from "../../ts/components/Canvas/components/RootNode/RootNode";
+import { IRootNode } from "../../ts/app/components/Canvas/components/RootNode/RootNode";
 import {
   findRootNode,
   parseXml,
   isValidXml
-} from "../../ts/components/CodeEditor/utils";
+} from "../../ts/app/components/CodeEditor/utils";
 
 export const buildRootNode = (rootNodes: IRootNode[], id: string): any => {
   const rootNode = findRootNode(rootNodes, id);

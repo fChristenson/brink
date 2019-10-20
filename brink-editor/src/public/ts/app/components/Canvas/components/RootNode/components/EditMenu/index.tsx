@@ -1,7 +1,7 @@
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { EditMenu as Component } from "./component";
-import { IState } from "../../../../../../store/state";
+import { IState } from "../../../../../../../store/state";
 import { Dispatch } from "react";
 import { IRootNode } from "../../RootNode";
 import {
@@ -13,7 +13,7 @@ import {
 } from "../../../../actions";
 import { withRouter, RouteComponentProps } from "react-router";
 import { IConnection } from "../../Connection";
-import { downloadTsxCode } from "../../../../../../../libs/export/api";
+import { downloadTsxCode } from "../../../../../../../../libs/export/api";
 
 interface IProps {
   rootNode: IRootNode;

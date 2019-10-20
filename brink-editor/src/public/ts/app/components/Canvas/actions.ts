@@ -1,4 +1,4 @@
-import { makeAction, IActionUnion } from "../../store/action";
+import { makeAction, IActionUnion } from "../../../store/action";
 import { CanvasEvents } from "./events";
 import { IRootNode } from "./components/RootNode/RootNode";
 import { IConnection } from "./components/RootNode/Connection";

@@ -1,4 +1,4 @@
-import { makeAction, IActionUnion } from "../../store/action";
+import { makeAction, IActionUnion } from "../../../store/action";
 import { CodeEditorEvent } from "./events";
 
 export const OpenCodeEditor = makeAction<CodeEditorEvent.OPEN, boolean>(

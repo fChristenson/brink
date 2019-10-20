@@ -4,7 +4,7 @@ import {
 } from "../../../libs/types/exportPage";
 import { exportPage, exportFlow } from "../../../libs/routes";
 import { getRequestInit } from "../api/requestInit";
-import { IRootNode } from "../../ts/components/Canvas/components/RootNode/RootNode";
+import { IRootNode } from "../../ts/app/components/Canvas/components/RootNode/RootNode";
 
 export const downloadTsxCode = async (name: string, xml: string) => {
   const body: IExportPageRequest = { name, xml };

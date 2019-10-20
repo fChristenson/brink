@@ -1,4 +1,4 @@
-import { IRootNode } from "../../public/ts/components/Canvas/components/RootNode/RootNode";
+import { IRootNode } from "../../public/ts/app/components/Canvas/components/RootNode/RootNode";
 
 export interface IExportPageRequest {
   name: string;

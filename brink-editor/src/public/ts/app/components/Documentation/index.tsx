@@ -1,7 +1,7 @@
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { Documentation as Component } from "./component";
-import { IState } from "../../store/state";
+import { IState } from "../../../store/state";
 import { OpenDocumentation, IAction } from "./actions";
 import { Dispatch } from "react";
 

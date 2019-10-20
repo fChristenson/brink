@@ -3,7 +3,7 @@ import { Menu, MenuItem, MenuDivider, Text } from "@blueprintjs/core";
 import { IRootNode } from "../../RootNode";
 import { hasOutgoingConnection } from "../../utils";
 import { IConnection } from "../../Connection";
-import { exportConfig } from "../../../../../../../libs/export/exportPageConfig";
+import { exportConfig } from "../../../../../../../../libs/export/exportPageConfig";
 
 interface IProps {
   rootNode: IRootNode;

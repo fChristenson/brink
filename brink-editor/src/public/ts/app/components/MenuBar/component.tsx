@@ -2,8 +2,9 @@ import React from "react";
 import { Navbar, Button, Alignment } from "@blueprintjs/core";
 import { config as codeConfig } from "../CodeEditor/config";
 import { config as documentationConfig } from "../Documentation/config";
-import { exportConfig } from "../../../libs/export/exportPageConfig";
+import { exportConfig } from "../../../../libs/export/exportPageConfig";
 import { IRootNode } from "../Canvas/components/RootNode/RootNode";
+import { takeScreenshot } from "../PageEditor/utils";
 
 interface IProps {
   title: string;
@@ -15,6 +16,7 @@ interface IProps {
   onExportPage?(name: string, xml?: string): void;
   openCodeEditor?(open: boolean, rootNode: IRootNode): void;
   openDocumentation?(open: boolean): void;
+  onSavePage?(rootNode: IRootNode, dataUrl: string): void;
   addPage?(): void;
   exportFlow?(rootNodes: IRootNode[]): void;
   previewFlow?(rootNodes: IRootNode[]): void;
@@ -32,6 +34,7 @@ export const MenuBar: React.FunctionComponent<IProps> = ({
   documentationOpen,
   onExportPage,
   addPage,
+  onSavePage,
   exportFlow
 }) => {
   return (
@@ -87,6 +90,14 @@ export const MenuBar: React.FunctionComponent<IProps> = ({
             icon={exportConfig.icon}
             text={exportConfig.text}
             onClick={() => onExportPage(rootNode.title, xmlCode)}
+          />
+        )}
+        {onSavePage && rootNode && (
+          <Button
+            className="bp3-minimal"
+            icon="saved"
+            text="Save page"
+            onClick={() => takeScreenshot(rootNode, onSavePage)}
           />
         )}
       </Navbar.Group>

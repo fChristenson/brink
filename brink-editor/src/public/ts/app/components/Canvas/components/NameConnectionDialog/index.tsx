@@ -1,7 +1,7 @@
 import { compose, Dispatch } from "redux";
 import { connect } from "react-redux";
 import { NameConnectionDialog as Component } from "./component";
-import { IState } from "../../../../store/state";
+import { IState } from "../../../../../store/state";
 import { IConnection, Connection } from "../RootNode/Connection";
 import {
   CreateConnection,

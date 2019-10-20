@@ -11,10 +11,15 @@ import {
   OpenDocumentation,
   IAction as IDocumentationAction
 } from "../Documentation/actions";
-import { IState } from "../../store/state";
-import { downloadTsxCode } from "../../../libs/export/api";
+import { IAction as ICanvasAction } from "../Canvas/actions";
+import { IAction as IAppAction } from "../../actions";
+import { IState } from "../../../store/state";
+import { downloadTsxCode } from "../../../../libs/export/api";
 import { findRootNode } from "../CodeEditor/utils";
 import { IRootNode } from "../Canvas/components/RootNode/RootNode";
+import { SetRootNodeImage } from "../Canvas/actions";
+import { AddToast } from "../../actions";
+import { SuccessToast } from "../../toasts";
 
 export interface IProps {
   id: string;
@@ -33,7 +38,9 @@ const mapStateToProps = (state: IState, { id }: IProps) => {
 };
 
 const mapDispatchToProps = (
-  dispatch: Dispatch<ICodeEditorAction | IDocumentationAction>
+  dispatch: Dispatch<
+    ICodeEditorAction | IDocumentationAction | ICanvasAction | IAppAction
+  >
 ) => {
   return {
     openCodeEditor: (open: boolean, rootNode: IRootNode) => {
@@ -46,6 +53,11 @@ const mapDispatchToProps = (
     onExportPage: async (name: string, xml?: string) => {
       if (!xml) return;
       await downloadTsxCode(name, xml);
+    },
+    onSavePage: (node: IRootNode, dataUrl: string) => {
+      if (node.image !== dataUrl && /data:image\/png\;base64/.test(dataUrl))
+        dispatch(SetRootNodeImage({ id: node.id, dataUrl }));
+      dispatch(AddToast(SuccessToast("Page saved")));
     }
   };
 };

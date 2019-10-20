@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
-import { reducer as codeEditor } from "../components/CodeEditor/reducer";
-import { reducer as documentation } from "../components/Documentation/reducer";
-import { reducer as canvas } from "../components/Canvas/reducer";
+import { reducer as codeEditor } from "../app/components/CodeEditor/reducer";
+import { reducer as documentation } from "../app/components/Documentation/reducer";
+import { reducer as canvas } from "../app/components/Canvas/reducer";
+import { reducer as app } from "../app/reducer";
 
 export const reducers = combineReducers({
+  app,
   codeEditor,
   documentation,
   canvas

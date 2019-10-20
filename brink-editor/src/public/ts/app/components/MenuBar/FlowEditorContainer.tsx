@@ -2,12 +2,12 @@ import { compose } from "redux";
 import { connect } from "react-redux";
 import { MenuBar as Component } from "./component";
 import { Dispatch } from "react";
-import { IState } from "../../store/state";
+import { IState } from "../../../store/state";
 import { AddRootNode, IAction } from "../Canvas/actions";
 import { RootNode, IRootNode } from "../Canvas/components/RootNode/RootNode";
-import { downloadFlow } from "../../../libs/export/api";
+import { downloadFlow } from "../../../../libs/export/api";
 import { withRouter, RouteComponentProps } from "react-router";
-import { previewRoute } from "../../../libs/api/routes";
+import { previewRoute } from "../../../../libs/api/routes";
 
 const mapStateToProps = (state: IState) => {
   return {

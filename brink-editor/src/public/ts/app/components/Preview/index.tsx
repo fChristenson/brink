@@ -1,10 +1,10 @@
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { Preview as Component } from "./component";
-import { IState } from "../../store/state";
+import { IState } from "../../../store/state";
 import { RouteComponentProps } from "react-router";
-import { buildRootNode } from "../../../libs/rootNodes";
-import { previewRoute } from "../../../libs/api/routes";
+import { buildRootNode } from "../../../../libs/rootNodes";
+import { previewRoute } from "../../../../libs/api/routes";
 
 const mapStateToProps = (
   state: IState,

@@ -1,7 +1,7 @@
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { CodeEditor as Component } from "./component";
-import { IState } from "../../store/state";
+import { IState } from "../../../store/state";
 import { Dispatch } from "react";
 import {
   OpenCodeEditor,

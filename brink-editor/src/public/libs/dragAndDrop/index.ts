@@ -1,9 +1,9 @@
 import interact from "interactjs";
-import { config } from "../../ts/components/Canvas/components/RootNode/config";
+import { config } from "../../ts/app/components/Canvas/components/RootNode/config";
 import { store } from "../../ts/store/store";
-import { MoveRootNode } from "../../ts/components/Canvas/actions";
-import { getTransform } from "../../ts/components/Canvas/components/RootNode/utils";
-import { RootNode } from "../../ts/components/Canvas/components/RootNode/RootNode";
+import { MoveRootNode } from "../../ts/app/components/Canvas/actions";
+import { getTransform } from "../../ts/app/components/Canvas/components/RootNode/utils";
+import { RootNode } from "../../ts/app/components/Canvas/components/RootNode/RootNode";
 
 function dragMoveListener(event: any) {
   const target = event.target;

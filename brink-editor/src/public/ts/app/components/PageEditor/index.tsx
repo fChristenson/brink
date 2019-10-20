@@ -1,13 +1,13 @@
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { PageEditor as Component } from "./component";
-import { IState } from "../../store/state";
+import { IState } from "../../../store/state";
 import { RouteComponentProps } from "react-router";
-import { buildRootNode } from "../../../libs/rootNodes";
-import { Dispatch } from "react";
-import { IAction, SetRootNodeImage } from "../Canvas/actions";
-import { IRootNode } from "../Canvas/components/RootNode/RootNode";
+import { buildRootNode } from "../../../../libs/rootNodes";
 import { findRootNode } from "../CodeEditor/utils";
+import { Dispatch } from "react";
+import { IAction, RemoveToast } from "../../actions";
+import { IToast } from "../../toasts";
 
 const mapStateToProps = (state: IState, { match }: RouteComponentProps) => {
   // @ts-ignore
@@ -16,6 +16,7 @@ const mapStateToProps = (state: IState, { match }: RouteComponentProps) => {
   const rootNode = findRootNode(state.canvas.rootNodes, id);
 
   return {
+    toasts: state.app.toasts,
     rootNode,
     xml
   };
@@ -23,10 +24,7 @@ const mapStateToProps = (state: IState, { match }: RouteComponentProps) => {
 
 const mapDispatchToProps = (dispatch: Dispatch<IAction>) => {
   return {
-    onScreenShot: (node: IRootNode, dataUrl: string) => {
-      if (node.image !== dataUrl && /data:image\/png\;base64/.test(dataUrl))
-        dispatch(SetRootNodeImage({ id: node.id, dataUrl }));
-    }
+    onToastEnd: (toast: IToast) => dispatch(RemoveToast(toast))
   };
 };
 
