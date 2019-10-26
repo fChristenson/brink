@@ -1,13 +1,9 @@
 import React from "react";
 import { styles } from "./styles";
-import { ITextAlign } from "../../libs/interfaces/textAlign";
 import { applyStyles } from "../../libs/utils/applyStyles";
 import { Color } from "../../configs/colors/colors";
 import { toUpper } from "../../libs/utils/toUpper";
-import { IMargin } from "../../libs/interfaces/margin";
-import { ITextColor } from "../../libs/interfaces/textColor";
-
-interface IProps extends IMargin, ITextAlign, ITextColor {}
+import { IProps } from "./props";
 
 export const Headline3: React.FunctionComponent<IProps> = ({
   children,

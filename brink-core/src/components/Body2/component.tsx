@@ -1,16 +1,9 @@
 import * as React from "react";
 import { styles } from "./styles";
 import { applyStyles } from "../../libs/utils/applyStyles";
-import { ITextAlign } from "../../libs/interfaces/textAlign";
 import { toUpper } from "../../libs/utils/toUpper";
 import { Color } from "../../configs/colors/colors";
-import { IPadding } from "../../libs/interfaces/padding";
-import { IMargin } from "../../libs/interfaces/margin";
-import { ITextColor } from "../../libs/interfaces/textColor";
-
-interface IProps extends IPadding, IMargin, ITextAlign, ITextColor {
-  noWrap?: boolean;
-}
+import { IProps } from "./props";
 
 export const Body2: React.FunctionComponent<IProps> = ({
   children,

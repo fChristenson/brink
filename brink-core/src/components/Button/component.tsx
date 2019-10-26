@@ -3,15 +3,8 @@ import { styles, textStyles } from "./styles";
 import { noop } from "../../libs/utils/noop";
 import { withAppContext } from "../../store";
 import { Icon } from "../Icon";
-import { IconName } from "../Icon/IconNames";
 import { ColorNames } from "../../configs/colors/colors";
-import { IOnClick } from "../../libs/interfaces/onClick";
-import { IPadding } from "../../libs/interfaces/padding";
-
-interface IProps extends IPadding, IOnClick {
-  rightIcon?: IconName;
-  leftIcon?: IconName;
-}
+import { IProps } from "./props";
 
 export const ButtonComponent: React.FunctionComponent<IProps> = ({
   children,

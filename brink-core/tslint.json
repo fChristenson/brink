@@ -3,6 +3,7 @@
   "extends": ["tslint:recommended"],
   "jsRules": {},
   "rules": {
+    "no-empty-interface": false,
     "no-default-export": true,
     "trailing-comma": false,
     "object-literal-sort-keys": false,

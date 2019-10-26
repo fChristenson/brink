@@ -1,16 +1,9 @@
 import React from "react";
-import { withAppContext, IOnUpdate } from "../../store";
+import { withAppContext } from "../../store";
 import { styles, errorStyles, errorMessageStyles } from "./styles";
 import { noop } from "../../libs/utils/noop";
-import { IName } from "../../libs/interfaces/name";
-import { IValidators } from "../../libs/interfaces/validators";
 import { IValidate } from "../../libs/interfaces/validate";
-
-interface IProps extends IName, IValidators {
-  onUpdate: IOnUpdate;
-  invalid?: string;
-  validator?: string;
-}
+import { IProps } from "./props";
 
 export const TextInputComponent: React.FunctionComponent<IProps> = ({
   onUpdate,

@@ -1,9 +1,9 @@
 import React from "react";
 import { styles } from "./styles";
 import { applyStyles } from "../../libs/utils/applyStyles";
-import { IMaxWidth } from "../../libs/interfaces/maxWidth";
+import { IProps } from "./props";
 
-export const CenterContainer: React.FunctionComponent<IMaxWidth> = ({
+export const CenterContainer: React.FunctionComponent<IProps> = ({
   children,
   maxWidth
 }) => {

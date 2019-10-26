@@ -1,15 +1,10 @@
 import React from "react";
-import { Color } from "../../configs/colors/colors";
 import { styles, formStyles } from "./styles";
-import { withAppContext, IOnSubmit } from "../../store";
+import { withAppContext } from "../../store";
 import { applyStyles } from "../../libs/utils/applyStyles";
+import { IProps } from "./props";
 
-interface IPageProps {
-  backgroundColor?: Color;
-  onSubmit: IOnSubmit;
-}
-
-export const PageComponent: React.FunctionComponent<IPageProps> = ({
+export const PageComponent: React.FunctionComponent<IProps> = ({
   children,
   onSubmit,
   backgroundColor
