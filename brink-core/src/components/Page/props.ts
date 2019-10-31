@@ -1,7 +1,6 @@
-import { Color } from "../../configs/colors/colors";
 import { IOnSubmit } from "../../store";
+import { IBackgroundColor } from "../../libs/interfaces/backgroundColor";
 
-export interface IProps {
-  backgroundColor?: Color;
+export interface IProps extends IBackgroundColor {
   onSubmit: IOnSubmit;
 }

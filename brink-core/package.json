@@ -13,7 +13,8 @@
     "test:watch": "npx jest --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prepublish": "npx tsc"
+    "prepublish": "npx tsc",
+    "print:params": "npx ts-node ./build/printParams.ts"
   },
   "keywords": [],
   "author": "Fredrik Christenson",

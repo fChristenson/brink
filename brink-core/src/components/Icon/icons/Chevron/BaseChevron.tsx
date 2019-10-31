@@ -1,5 +1,5 @@
 import React from "react";
-import { Color } from "../../../../configs/colors/colors";
+import { getColor } from "../../../../configs/colors/colors";
 import { IIconProps } from "../IconProps";
 
 export interface IBaseChevronProps {
@@ -20,7 +20,7 @@ export const BaseChevron: React.FunctionComponent<
     >
       <path
         d="M20 11L12 19L20 27"
-        stroke={color ? Color[color] : "#707985"}
+        stroke={color ? getColor(color) : "#707985"}
         strokeLinecap="round"
         strokeLinejoin="round"
       />

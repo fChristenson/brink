@@ -1,5 +1,5 @@
 import React from "react";
-import { ColorNames, Color } from "../../configs/colors/colors";
+import { ColorNames, Color, getColor } from "../../configs/colors/colors";
 import { toUpper } from "../utils/toUpper";
 import { Body2 } from "../../components";
 
@@ -17,7 +17,7 @@ export const Block: React.FunctionComponent<IProps> = ({
   blockNumber = 1
 }) => {
   // @ts-ignore
-  const color = Color[toUpper(backgroundColor)];
+  const color = getColor(backgroundColor);
   const style = {
     width,
     height,

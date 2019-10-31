@@ -1,7 +1,7 @@
 import React from "react";
 import { styles } from "./styles";
 import { applyStyles } from "../../libs/utils/applyStyles";
-import { Color } from "../../configs/colors/colors";
+import { Color, getColor } from "../../configs/colors/colors";
 import { toUpper } from "../../libs/utils/toUpper";
 import { IProps } from "./props";
 
@@ -16,7 +16,7 @@ export const Paper: React.FunctionComponent<IProps> = ({
 }) => {
   const backgroundColorValue =
     // @ts-ignore
-    backgroundColor && Color[toUpper(backgroundColor)];
+    backgroundColor && getColor(backgroundColor);
   const style = applyStyles(styles, {
     height,
     maxWidth,

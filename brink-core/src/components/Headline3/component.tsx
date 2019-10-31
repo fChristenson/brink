@@ -1,8 +1,7 @@
 import React from "react";
 import { styles } from "./styles";
 import { applyStyles } from "../../libs/utils/applyStyles";
-import { Color } from "../../configs/colors/colors";
-import { toUpper } from "../../libs/utils/toUpper";
+import { getColor } from "../../configs/colors/colors";
 import { IProps } from "./props";
 
 export const Headline3: React.FunctionComponent<IProps> = ({
@@ -12,7 +11,7 @@ export const Headline3: React.FunctionComponent<IProps> = ({
   textColor
 }) => {
   // @ts-ignore
-  const color = textColor && Color[toUpper(textColor)];
+  const color = textColor && getColor(textColor);
   const style = applyStyles(styles, { textAlign, margin, color });
   return <h3 style={style}>{children}</h3>;
 };

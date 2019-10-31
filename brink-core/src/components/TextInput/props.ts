@@ -4,6 +4,6 @@ import { IOnUpdate } from "../../store";
 
 export interface IProps extends IName, IValidators {
   onUpdate: IOnUpdate;
-  invalid?: string;
+  invalid?: boolean;
   validator?: string;
 }

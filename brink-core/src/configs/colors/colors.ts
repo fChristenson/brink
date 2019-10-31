@@ -1,3 +1,10 @@
+import { toUpper } from "../../libs/utils/toUpper";
+
+export const getColor = (color: ColorNames): Color => {
+  // @ts-ignore
+  return Color[toUpper(color)];
+};
+
 export enum Color {
   BLUE1 = "#00B5B9",
   WHITE1 = "white",

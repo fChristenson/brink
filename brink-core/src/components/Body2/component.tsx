@@ -1,8 +1,7 @@
 import * as React from "react";
 import { styles } from "./styles";
 import { applyStyles } from "../../libs/utils/applyStyles";
-import { toUpper } from "../../libs/utils/toUpper";
-import { Color } from "../../configs/colors/colors";
+import { getColor } from "../../configs/colors/colors";
 import { IProps } from "./props";
 
 export const Body2: React.FunctionComponent<IProps> = ({
@@ -14,7 +13,7 @@ export const Body2: React.FunctionComponent<IProps> = ({
   noWrap
 }) => {
   // @ts-ignore
-  const color = textColor && Color[toUpper(textColor)];
+  const color = textColor && getColor(textColor);
   const style = applyStyles(styles, {
     textAlign,
     margin,

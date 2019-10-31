@@ -1,10 +1,9 @@
 import { IMargin } from "../../libs/interfaces/margin";
 import { IMaxWidth } from "../../libs/interfaces/maxWidth";
 import { IPadding } from "../../libs/interfaces/padding";
-import { ColorNames } from "../../configs/colors/colors";
+import { IBackgroundColor } from "../../libs/interfaces/backgroundColor";
 
-export interface IProps extends IMargin, IMaxWidth, IPadding {
+export interface IProps extends IMargin, IMaxWidth, IPadding, IBackgroundColor {
   height?: string;
   background?: string;
-  backgroundColor?: ColorNames;
 }
