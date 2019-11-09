@@ -1,6 +1,5 @@
 import React from "react";
-import { ColorNames, Color, getColor } from "../../configs/colors/colors";
-import { toUpper } from "../utils/toUpper";
+import { ColorNames, getColor } from "../../configs/colors/colors";
 import { Body2 } from "../../components";
 
 interface IProps {

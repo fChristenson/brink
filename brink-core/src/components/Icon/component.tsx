@@ -13,7 +13,7 @@ const lowerCaseIcons = Object.keys(Icons).reduce((acc, key) => {
 }, {});
 
 export const IconComponent: React.FunctionComponent<IProps> = ({
-  variant,
+  icon,
   onClicks = {},
   onClick,
   color,
@@ -21,7 +21,7 @@ export const IconComponent: React.FunctionComponent<IProps> = ({
 }) => {
   const onClickFn = (onClick && onClicks[onClick]) || noop;
   // @ts-ignore
-  const Component = lowerCaseIcons[variant.toLowerCase()];
+  const Component = lowerCaseIcons[icon.toLowerCase()];
   const style = applyStyles(styles, { padding });
   return (
     <span role={onClickFn && "button"} onClick={onClickFn} style={style}>
@@ -30,4 +30,4 @@ export const IconComponent: React.FunctionComponent<IProps> = ({
   );
 };
 
-export const Icon = withAppContext(IconComponent);
+export const Icon = withAppContext<IProps>(IconComponent);

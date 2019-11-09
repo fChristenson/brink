@@ -33,4 +33,4 @@ export const TextInputComponent: React.FunctionComponent<IProps> = ({
   );
 };
 
-export const TextInput = withAppContext(TextInputComponent);
+export const TextInput = withAppContext<IProps>(TextInputComponent);

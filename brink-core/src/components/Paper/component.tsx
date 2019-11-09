@@ -1,8 +1,7 @@
 import React from "react";
 import { styles } from "./styles";
 import { applyStyles } from "../../libs/utils/applyStyles";
-import { Color, getColor } from "../../configs/colors/colors";
-import { toUpper } from "../../libs/utils/toUpper";
+import { getColor } from "../../configs/colors/colors";
 import { IProps } from "./props";
 
 export const Paper: React.FunctionComponent<IProps> = ({

@@ -12,7 +12,7 @@ export const RadioInputComponent: React.FunctionComponent<IProps> = ({
   onUpdate,
   value,
   name,
-  variant,
+  icon,
   margin,
   disabled,
   children
@@ -28,7 +28,7 @@ export const RadioInputComponent: React.FunctionComponent<IProps> = ({
 
   return (
     <label htmlFor={id} style={style}>
-      <Icon color={color} variant={variant} />
+      <Icon color={color} icon={icon} />
       <Body2 textColor={color} noWrap>
         {children}
       </Body2>
@@ -45,4 +45,4 @@ export const RadioInputComponent: React.FunctionComponent<IProps> = ({
   );
 };
 
-export const RadioInput = withAppContext(RadioInputComponent);
+export const RadioInput = withAppContext<IProps>(RadioInputComponent);

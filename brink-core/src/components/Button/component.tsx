@@ -17,11 +17,11 @@ export const ButtonComponent: React.FunctionComponent<IProps> = ({
   return (
     <button onClick={onClickFn} style={styles}>
       {leftIcon && (
-        <Icon color={ColorNames.WHITE1} padding="0" variant={leftIcon} />
+        <Icon color={ColorNames.WHITE1} padding="0" icon={leftIcon} />
       )}
       <span style={textStyles}>{children}</span>
       {rightIcon && (
-        <Icon color={ColorNames.WHITE1} padding="0" variant={rightIcon} />
+        <Icon color={ColorNames.WHITE1} padding="0" icon={rightIcon} />
       )}
     </button>
   );
@@ -29,4 +29,4 @@ export const ButtonComponent: React.FunctionComponent<IProps> = ({
 
 ButtonComponent.displayName = "Button";
 
-export const Button = withAppContext(ButtonComponent);
+export const Button = withAppContext<IProps>(ButtonComponent);

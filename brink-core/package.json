@@ -1,6 +1,6 @@
 {
   "name": "brink-core",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "User survey framework",
   "main": "out/index.js",
   "types": "out/index.d.ts",

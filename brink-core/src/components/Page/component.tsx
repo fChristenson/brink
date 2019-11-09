@@ -22,4 +22,4 @@ export const PageComponent: React.FunctionComponent<IProps> = ({
   );
 };
 
-export const Page = withAppContext(PageComponent);
+export const Page = withAppContext<IProps>(PageComponent);

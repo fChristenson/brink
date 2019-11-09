@@ -12,9 +12,8 @@ export interface IContext {
   onUpdate(key: string, value: any): void;
 }
 
-export const withAppContext = (Component: React.ReactNode) => {
-  //TODO: type secure
-  return (props: any) => (
+export function withAppContext<T>(Component: React.ReactNode) {
+  return (props: T) => (
     <context.Consumer>
       {(contextObj: any) => {
         return (
@@ -31,4 +30,4 @@ export const withAppContext = (Component: React.ReactNode) => {
       }}
     </context.Consumer>
   );
-};
+}

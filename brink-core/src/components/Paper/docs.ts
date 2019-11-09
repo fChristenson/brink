@@ -16,6 +16,8 @@ export const docs: IDocs<keyof IProps> = {
   backgroundColor: sharedDocs.backgroundColor,
   background: {
     description: "The background value",
-    exampleValues: Object.values(ColorNames).concat(["url(/foo.png)"])
+    exampleValues: Object.values(ColorNames)
+      .map(n => n.toString())
+      .concat(["url(/foo.png)"])
   }
 };
