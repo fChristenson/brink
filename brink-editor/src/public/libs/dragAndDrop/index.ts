@@ -27,6 +27,7 @@ function dragMoveListener(event: any) {
 interact(".root_node").draggable({
   inertia: true,
   modifiers: [
+    // @ts-ignore
     interact.modifiers.restrict({
       restriction: "parent",
       endOnly: true

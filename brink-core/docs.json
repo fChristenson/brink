@@ -1,0 +1,392 @@
+[
+  {
+    "name": "Body2",
+    "docs": {
+      "padding": {
+        "description": "Padding to use for the element",
+        "exampleValues": [
+          "0 0 0 0",
+          "10px 10px",
+          "20%",
+          "5px 5px 5px 0"
+        ]
+      },
+      "margin": {
+        "description": "Margin to use for the element",
+        "exampleValues": [
+          "0 0 0 0",
+          "10px 10px",
+          "20%",
+          "5px 5px 5px 0"
+        ]
+      },
+      "textColor": {
+        "description": "Text color to use",
+        "exampleValues": [
+          "BLUE1",
+          "WHITE1",
+          "WHITE2",
+          "GRAY1",
+          "GRAY2",
+          "GRAY3",
+          "GREEN1",
+          "GRADIENT1"
+        ]
+      },
+      "textAlign": {
+        "description": "How the element should align text",
+        "exampleValues": [
+          "center",
+          "left",
+          "right"
+        ]
+      },
+      "noWrap": {
+        "description": "Force text to stay on one line and not wrap if it overflows",
+        "exampleValues": [
+          true,
+          false
+        ]
+      }
+    }
+  },
+  {
+    "name": "Button",
+    "docs": {
+      "padding": {
+        "description": "Padding to use for the element",
+        "exampleValues": [
+          "0 0 0 0",
+          "10px 10px",
+          "20%",
+          "5px 5px 5px 0"
+        ]
+      },
+      "onClick": {
+        "description": "The function to run when the element is clicked",
+        "exampleValues": [
+          "goToPage1",
+          "addRow",
+          "removeRow",
+          "save",
+          "delete"
+        ]
+      },
+      "rightIcon": {
+        "description": "Icon to use",
+        "exampleValues": [
+          "Help",
+          "Subscription",
+          "Mobile",
+          "ChevronRight",
+          "ChevronLeft"
+        ]
+      },
+      "leftIcon": {
+        "description": "Icon to use",
+        "exampleValues": [
+          "Help",
+          "Subscription",
+          "Mobile",
+          "ChevronRight",
+          "ChevronLeft"
+        ]
+      }
+    }
+  },
+  {
+    "name": "CenterContainer",
+    "docs": {
+      "maxWidth": {
+        "description": "Maximum width the element is allowed to have",
+        "exampleValues": [
+          "100px",
+          "100%",
+          "5px",
+          "5%"
+        ]
+      }
+    }
+  },
+  {
+    "name": "DivContainer",
+    "docs": {
+      "margin": {
+        "description": "Margin to use for the element",
+        "exampleValues": [
+          "0 0 0 0",
+          "10px 10px",
+          "20%",
+          "5px 5px 5px 0"
+        ]
+      },
+      "maxWidth": {
+        "description": "Maximum width the element is allowed to have",
+        "exampleValues": [
+          "100px",
+          "100%",
+          "5px",
+          "5%"
+        ]
+      },
+      "alignItems": {
+        "description": "The alignment of elements on the y axis",
+        "exampleValues": [
+          "center"
+        ]
+      },
+      "justifyContent": {
+        "description": "Justify content on the x axis",
+        "exampleValues": [
+          "space-between",
+          "flex-start",
+          "flex-end",
+          "center"
+        ]
+      }
+    }
+  },
+  {
+    "name": "Headline3",
+    "docs": {
+      "margin": {
+        "description": "Margin to use for the element",
+        "exampleValues": [
+          "0 0 0 0",
+          "10px 10px",
+          "20%",
+          "5px 5px 5px 0"
+        ]
+      },
+      "textAlign": {
+        "description": "How the element should align text",
+        "exampleValues": [
+          "center",
+          "left",
+          "right"
+        ]
+      },
+      "textColor": {
+        "description": "Text color to use",
+        "exampleValues": [
+          "BLUE1",
+          "WHITE1",
+          "WHITE2",
+          "GRAY1",
+          "GRAY2",
+          "GRAY3",
+          "GREEN1",
+          "GRADIENT1"
+        ]
+      }
+    }
+  },
+  {
+    "name": "Icon",
+    "docs": {
+      "onClick": {
+        "description": "The function to run when the element is clicked",
+        "exampleValues": [
+          "goToPage1",
+          "addRow",
+          "removeRow",
+          "save",
+          "delete"
+        ]
+      },
+      "padding": {
+        "description": "Padding to use for the element",
+        "exampleValues": [
+          "0 0 0 0",
+          "10px 10px",
+          "20%",
+          "5px 5px 5px 0"
+        ]
+      },
+      "icon": {
+        "description": "Icon to use",
+        "exampleValues": [
+          "Help",
+          "Subscription",
+          "Mobile",
+          "ChevronRight",
+          "ChevronLeft"
+        ]
+      },
+      "color": {
+        "description": "Color of the element",
+        "exampleValues": [
+          "BLUE1",
+          "WHITE1",
+          "WHITE2",
+          "GRAY1",
+          "GRAY2",
+          "GRAY3",
+          "GREEN1",
+          "GRADIENT1"
+        ]
+      }
+    }
+  },
+  {
+    "name": "Page",
+    "docs": {
+      "backgroundColor": {
+        "description": "The background color",
+        "exampleValues": [
+          "BLUE1",
+          "WHITE1",
+          "WHITE2",
+          "GRAY1",
+          "GRAY2",
+          "GRAY3",
+          "GREEN1",
+          "GRADIENT1"
+        ]
+      }
+    }
+  },
+  {
+    "name": "Paper",
+    "docs": {
+      "margin": {
+        "description": "Margin to use for the element",
+        "exampleValues": [
+          "0 0 0 0",
+          "10px 10px",
+          "20%",
+          "5px 5px 5px 0"
+        ]
+      },
+      "padding": {
+        "description": "Padding to use for the element",
+        "exampleValues": [
+          "0 0 0 0",
+          "10px 10px",
+          "20%",
+          "5px 5px 5px 0"
+        ]
+      },
+      "maxWidth": {
+        "description": "The max width of the element",
+        "exampleValues": [
+          "100px",
+          "100%",
+          "50px",
+          "50%"
+        ]
+      },
+      "height": {
+        "description": "The height of the element",
+        "exampleValues": [
+          "100px",
+          "100%",
+          "50px",
+          "50%"
+        ]
+      },
+      "backgroundColor": {
+        "description": "The background color",
+        "exampleValues": [
+          "BLUE1",
+          "WHITE1",
+          "WHITE2",
+          "GRAY1",
+          "GRAY2",
+          "GRAY3",
+          "GREEN1",
+          "GRADIENT1"
+        ]
+      },
+      "background": {
+        "description": "The background value",
+        "exampleValues": [
+          "BLUE1",
+          "WHITE1",
+          "WHITE2",
+          "GRAY1",
+          "GRAY2",
+          "GRAY3",
+          "GREEN1",
+          "GRADIENT1",
+          "url(/foo.png)"
+        ]
+      }
+    }
+  },
+  {
+    "name": "RadioInput",
+    "docs": {
+      "name": {
+        "description": "Name of the component element",
+        "exampleValues": [
+          "username",
+          "password",
+          "email"
+        ]
+      },
+      "margin": {
+        "description": "Margin to use for the element",
+        "exampleValues": [
+          "0 0 0 0",
+          "10px 10px",
+          "20%",
+          "5px 5px 5px 0"
+        ]
+      },
+      "icon": {
+        "description": "Icon to use",
+        "exampleValues": [
+          "Help",
+          "Subscription",
+          "Mobile",
+          "ChevronRight",
+          "ChevronLeft"
+        ]
+      },
+      "disabled": {
+        "description": "Element is disabled or enabled",
+        "exampleValues": [
+          true,
+          false
+        ]
+      },
+      "value": {
+        "description": "The value of th element",
+        "exampleValues": []
+      }
+    }
+  },
+  {
+    "name": "SubmitInput",
+    "docs": {
+      "disabled": {
+        "description": "Element is disabled or enabled",
+        "exampleValues": [
+          true,
+          false
+        ]
+      }
+    }
+  },
+  {
+    "name": "TextInput",
+    "docs": {
+      "name": {
+        "description": "Name of the component element",
+        "exampleValues": [
+          "username",
+          "password",
+          "email"
+        ]
+      },
+      "invalid": {
+        "description": "Element can be set as invalid to show how it will look when in error state",
+        "exampleValues": [
+          true,
+          false
+        ]
+      }
+    }
+  }
+]

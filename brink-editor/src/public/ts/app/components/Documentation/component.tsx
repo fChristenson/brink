@@ -1,6 +1,7 @@
 import React from "react";
-import { Drawer } from "@blueprintjs/core";
+import { Drawer, PanelStack } from "@blueprintjs/core";
 import { config } from "./config";
+import { ComponentListPanel } from "./components/ComponentListPanel";
 
 interface IProps {
   open: boolean;
@@ -21,6 +22,11 @@ export const Documentation: React.FunctionComponent<IProps> = ({
       title={config.title}
       onClose={onClose}
       className="bp3-dark"
-    ></Drawer>
+    >
+      <PanelStack
+        className="documentation__panel"
+        initialPanel={{ component: ComponentListPanel, title: "Index" }}
+      />
+    </Drawer>
   );
 };

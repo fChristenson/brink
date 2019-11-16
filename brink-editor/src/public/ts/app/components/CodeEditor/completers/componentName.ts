@@ -1,4 +1,4 @@
-import * as Brink from "brink-core/out/components";
+import * as Brink from "brink-core/out/src/components";
 
 export const componentNameCompleter = {
   getCompletions: (_: any, _1: any, _2: any, _3: any, callback: any) => {

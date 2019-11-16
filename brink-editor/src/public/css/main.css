@@ -1,9 +1,9 @@
 @import "../../../node_modules/@blueprintjs/core/lib/css/blueprint.css";
 @import "../../../node_modules/@blueprintjs/core/lib/less/variables.less";
 @import "./global.css";
-@import "../ts/components/Canvas/components/RootNode/styles.css";
-@import "../ts/components/Canvas/styles.css";
-@import "../ts/components/CodeEditor/styles.css";
-@import "../ts/components/Documentation/styles.css";
-@import "../ts/components/Content/styles.css";
-@import "../ts/components/Canvas/components/NameConnectionDialog/styles.css";
+@import "../ts/app/components/Canvas/components/RootNode/styles.css";
+@import "../ts/app/components/Canvas/styles.css";
+@import "../ts/app/components/CodeEditor/styles.css";
+@import "../ts/app/components/Documentation/styles.css";
+@import "../ts/app/components/Content/styles.css";
+@import "../ts/app/components/Canvas/components/NameConnectionDialog/styles.css";

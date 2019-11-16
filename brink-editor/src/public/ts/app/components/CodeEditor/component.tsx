@@ -34,7 +34,7 @@ export const CodeEditor: React.FunctionComponent<IProps> = ({
     <Drawer
       position="left"
       icon={config.icon}
-      size={Drawer.SIZE_SMALL}
+      size={Drawer.SIZE_STANDARD}
       isOpen={open}
       hasBackdrop={false}
       title={config.title}

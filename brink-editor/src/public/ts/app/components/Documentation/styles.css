@@ -6,3 +6,41 @@
 .documentation--hidden {
   display: none;
 }
+
+.documentation__panel {
+  height: 100%;
+}
+
+.documentation__tree {
+  padding: var(--margin-md) 0;
+}
+
+.documentation__props {
+  padding: var(--margin-md);
+}
+
+.documentation__props-h3 {
+  margin-bottom: var(--margin-md);
+}
+
+.documentation__props-h4 {
+  color: var(--color-green2);
+  padding: var(--margin-sm) 0;
+}
+
+.documentation__props-ul {
+  list-style: none;
+}
+
+.documentation__props-li {
+  margin: var(--margin-md) 0;
+}
+
+.documentation__props-pre {
+  background: var(--color-black1);
+  padding: var(--margin-sm);
+}
+
+.documentation__props-p {
+  margin: var(--margin-sm) 0;
+}
