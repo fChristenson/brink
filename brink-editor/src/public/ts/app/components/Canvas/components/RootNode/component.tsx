@@ -65,7 +65,12 @@ export class RootNode extends React.Component<IProps> {
         />
         <div className="root_node__body">
           <EditMenu rootNode={rootNode}>
-            <Icon className="root_node__cog" intent="primary" icon="cog" />
+            <Icon
+              className="root_node__cog"
+              color="RED"
+              intent="primary"
+              icon="cog"
+            />
           </EditMenu>
           <ArcherElement id={getToId(rootNode.id)} />
           {children}
