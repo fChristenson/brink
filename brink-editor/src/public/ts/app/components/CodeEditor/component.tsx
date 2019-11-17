@@ -9,7 +9,8 @@ import "brace/theme/monokai";
 import {
   componentNameCompleter,
   propertyNameCompleter,
-  makeConnectionCompleter
+  makeConnectionCompleter,
+  colorNameCompleter
 } from "./completers";
 import { IConnection } from "../Canvas/components/RootNode/Connection";
 
@@ -46,6 +47,7 @@ export const CodeEditor: React.FunctionComponent<IProps> = ({
         enableLiveAutocompletion={[
           componentNameCompleter,
           propertyNameCompleter,
+          colorNameCompleter,
           makeConnectionCompleter(connections)
         ]}
         tabSize={2}

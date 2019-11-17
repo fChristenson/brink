@@ -10,7 +10,7 @@ export const makeConnectionCompleter = (connections: IConnection[]) => {
           return {
             caption: word,
             value: word,
-            meta: "transitions"
+            meta: "transition"
           };
         })
       );

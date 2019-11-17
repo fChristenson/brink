@@ -1,3 +1,4 @@
 export * from "./componentName";
+export * from "./propertyName";
 export * from "./connectionName";
-export * from "./propName";
+export * from "./colorName";

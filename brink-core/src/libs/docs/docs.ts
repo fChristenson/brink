@@ -14,7 +14,7 @@ import { IPadding } from "../interfaces/padding";
 import { ITextAlign, textAlign } from "../interfaces/textAlign";
 import { ITextColor } from "../interfaces/textColor";
 import { IconName } from "../../components/Icon/IconNames";
-import { ColorNames } from "../../configs/colors";
+import { ColorNames, Color } from "../../configs/colors";
 import { IBackgroundColor } from "../interfaces/backgroundColor";
 import { ExcludePrivateProps } from "../interfaces";
 

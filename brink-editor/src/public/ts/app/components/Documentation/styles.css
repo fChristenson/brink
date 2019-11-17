@@ -19,6 +19,10 @@
   padding: var(--margin-md);
 }
 
+.documentation__h3 {
+  margin: var(--margin-md) 0 0 var(--margin-md);
+}
+
 .documentation__props-h3 {
   margin-bottom: var(--margin-md);
 }
@@ -37,10 +41,23 @@
 }
 
 .documentation__props-pre {
+  overflow: scroll;
   background: var(--color-black1);
   padding: var(--margin-sm);
 }
 
 .documentation__props-p {
   margin: var(--margin-sm) 0;
+}
+
+.documentation__props-color-p {
+  margin-top: calc(var(--margin-xl) * 2);
+}
+
+.documentation__props-color-p-color {
+  width: 12px;
+  height: 12px;
+  background: red;
+  margin: 0px var(--margin-sm);
+  border-radius: 50%;
 }
