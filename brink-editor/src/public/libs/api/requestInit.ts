@@ -1,4 +1,4 @@
-export const getRequestInit = (method: string, body?: any): RequestInit => {
+export const Request = (method: string, body?: any): RequestInit => {
   return {
     headers: {
       "Content-Type": "application/json"
