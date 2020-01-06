@@ -30,4 +30,6 @@ export const IconComponent: React.FunctionComponent<IProps> = ({
   );
 };
 
+IconComponent.displayName = "Icon";
+
 export const Icon = withAppContext<IProps>(IconComponent);

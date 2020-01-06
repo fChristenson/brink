@@ -21,3 +21,6 @@ export { Body2 } from "./Body2";
 
 // images
 export { Icon } from "./Icon";
+
+// headers
+export { Header } from "./Header";

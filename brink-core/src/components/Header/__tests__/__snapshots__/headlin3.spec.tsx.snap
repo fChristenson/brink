@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Headline3 tests Base test should assert that the component matches the snapshot 1`] = `"<h3 style=\\"color:#707985;font-family:Roboto;font-style:normal;font-weight:bolder;font-size:24px;line-height:28px;letter-spacing:0.2px\\"></h3>"`;
+
+exports[`Headline3 tests Base test should assert that the component matches the snapshot 2`] = `
+Object {
+  "color": "#707985",
+  "fontFamily": "Roboto",
+  "fontSize": "24px",
+  "fontStyle": "normal",
+  "fontWeight": "bolder",
+  "letterSpacing": "0.2px",
+  "lineHeight": "28px",
+}
+`;
