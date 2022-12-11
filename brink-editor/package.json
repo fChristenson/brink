@@ -18,7 +18,7 @@
     "brink-cli": "1.4.0",
     "brink-core": "1.4.1",
     "dom-to-image": "2.6.0",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "interactjs": "1.6.3",
     "react": "16.9.0",
     "react-ace": "7.0.4",
